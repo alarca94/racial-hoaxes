@@ -1,0 +1,13 @@
+.idea/
+.ipynb_checkpoints/
+.DS_Store
+
+data/
+models/pretrained/
+documentation/
+query_files/
+keys.json
+
+__pycache__/
+
+nohup.out
