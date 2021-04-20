@@ -17,21 +17,24 @@ class AnnotatorWindow(QtWidgets.QMainWindow):
 
         self.printer = Printer(self.status)
         self.data = None
-        self.label_default = {'stereotype': None, 'sentiment': 'neutral', 'target': None}
+        self.label_default = {'stereotype': 'none', 'sentiment': 'neutral', 'target': 'none'}
 
         # -------------- SETTING THE LAYOUTS -------------- #
         gen_layout = get_layout(QtWidgets.QVBoxLayout())
         upper_layout = get_layout(QtWidgets.QHBoxLayout())
+        middle_layout = get_layout(QtWidgets.QHBoxLayout())
         bottom_layout = get_layout(QtWidgets.QHBoxLayout())
 
         self.add_tweet_viewer(upper_layout)
+        self.add_labelling_fields(middle_layout)
         self.add_buttons(bottom_layout)
 
-        gen_layout.addLayout(get_layout(QtWidgets.QHBoxLayout()), 15)
         gen_layout.addLayout(upper_layout, 40)
+        gen_layout.addLayout(get_layout(QtWidgets.QHBoxLayout()), 5)
+        gen_layout.addLayout(middle_layout, 20)
         gen_layout.addLayout(get_layout(QtWidgets.QHBoxLayout()), 10)
-        gen_layout.addLayout(bottom_layout, 25)
-        gen_layout.addLayout(get_layout(QtWidgets.QHBoxLayout()), 10)
+        gen_layout.addLayout(bottom_layout, 20)
+        gen_layout.addLayout(get_layout(QtWidgets.QHBoxLayout()), 5)
 
         widget = QtWidgets.QWidget()
         widget.setLayout(gen_layout)
@@ -52,6 +55,9 @@ class AnnotatorWindow(QtWidgets.QMainWindow):
         self.tweet.setText(self.data.iloc[self.row_id].text)
         self.links.setText(self.get_current_links())
         self.id_marker.setText(str(self.row_id))
+        self.stereotype.setCurrentText(self.data.iloc[self.row_id].stereotype)
+        self.target.setCurrentText(self.data.iloc[self.row_id].target)
+        self.sentiment.setCurrentText(self.data.iloc[self.row_id].sentiment)
 
     def get_current_links(self):
         links = self.data.iloc[self.row_id].urls
@@ -88,6 +94,51 @@ class AnnotatorWindow(QtWidgets.QMainWindow):
         grid_layout.addWidget(self.links, 1, 1)
 
         layout.addLayout(grid_layout, Qt.AlignCenter)
+
+    def add_labelling_fields(self, layout):
+        grid_layout = QtWidgets.QGridLayout()
+        labels = []
+
+        stereotypes = ['none', '1', '2', '3', '4']
+        self.stereotype = QtWidgets.QComboBox()
+        self.stereotype.addItems(stereotypes)
+        self.stereotype.currentIndexChanged.connect(lambda: self.update_label('stereotype'))
+        labels.append(QtWidgets.QLabel('STEREOTYPE'))
+
+        sentiments = ['negative', 'neutral', 'positive']
+        self.sentiment = QtWidgets.QComboBox()
+        self.sentiment.addItems(sentiments)
+        self.sentiment.currentIndexChanged.connect(lambda: self.update_label('sentiment'))
+        labels.append(QtWidgets.QLabel('SENTIMENT'))
+
+        targets = ['none', 'individual', 'group']
+        self.target = QtWidgets.QComboBox()
+        self.target.addItems(targets)
+        self.target.currentIndexChanged.connect(lambda: self.update_label('target'))
+        labels.append(QtWidgets.QLabel('TARGET'))
+
+        l_height = 50
+        for l in labels:
+            l.setStyleSheet('background-color:#87D3FC;color:#000000;font-weight: bold;')
+            l.setAlignment(Qt.AlignCenter)
+            l.setFixedHeight(l_height)
+
+        grid_layout.addWidget(labels[0], 0, 0)
+        grid_layout.addWidget(self.stereotype, 1, 0)
+        grid_layout.addWidget(labels[1], 0, 1)
+        grid_layout.addWidget(self.sentiment, 1, 1)
+        grid_layout.addWidget(labels[2], 0, 2)
+        grid_layout.addWidget(self.target, 1, 2)
+
+        layout.addLayout(grid_layout, Qt.AlignCenter)
+
+    def update_label(self, field):
+        self.data.loc[self.row_id, field] = eval(f'self.{field}.currentText()')
+
+    def reset_labels(self):
+        self.stereotype.setCurrentText(self.label_default['stereotype'])
+        self.sentiment.setCurrentText(self.label_default['sentiment'])
+        self.target.setCurrentText(self.label_default['target'])
 
     def add_buttons(self, layout):
         grid_layout = QtWidgets.QGridLayout()

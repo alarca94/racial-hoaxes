@@ -96,7 +96,6 @@ class Searcher:
                 for tweet in data:
                     tweet_data.append(self._extract_info(tweet))
                 self.curr_tweets += len(tweet_data)
-                print(len(tweet_data))
 
                 msg = f'Number of tweets retrieved: {self.curr_tweets}'  # \tLast Date: {tweet_data[-1][2]}'
                 if self.out_widget is not None:
@@ -152,7 +151,6 @@ class Searcher:
             for tweet in data:
                 tweet_data.append(self._extract_info(tweet))
             self.curr_tweets += len(tweet_data)
-            print(len(tweet_data))
 
             # Save initial tweets request
             tweet_df = pd.DataFrame(tweet_data, columns=self.columns)

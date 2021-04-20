@@ -149,7 +149,7 @@ class DownloadWindow(QtWidgets.QMainWindow):
                             'date_to': self.end_date.dateTime().addDays(1).toString('yyyy-MM-dd'),
                             'lang': self.available_langs[self.language.currentText()],
                             'max_tweets': max_tweets,
-                            'max_results': min(10, max_tweets)}
+                            'max_results': min(500, max_tweets)}
             self.hashtags.setText(' OR '.join(hashtags))
             self.keywords.setText(' OR '.join(keywords))
             self.searcher.run_query(query_params)
