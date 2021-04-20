@@ -1,9 +1,10 @@
 import sys
 
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication
 from PyQt5 import QtGui
 
-from view.home import MainWindow
+from view.annotate import AnnotatorWindow
+from view.home import HomeWindow
 from view.download import DownloadWindow
 from view.clean import CleanerWindow
 
@@ -21,7 +22,11 @@ def run():
     # screen_resolution = app.desktop().screenGeometry()
     # width, height = screen_resolution.width(), screen_resolution.height()
 
-    windows = {'home': MainWindow(), 'download': DownloadWindow(), 'cleaner': CleanerWindow()}
+    windows = {'home': HomeWindow(),
+               'download': DownloadWindow(),
+               'cleaner': CleanerWindow(),
+               'annotator': AnnotatorWindow()}
+
     for k, v in windows.items():
         v.set_windows(windows)
 

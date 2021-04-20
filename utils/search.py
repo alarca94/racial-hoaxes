@@ -125,9 +125,9 @@ class Searcher:
         date_since = dateutil.parser.isoparse(query_params['date_since'])
         q = self._create_query(query_params)
 
-        tweet_fields = ['attachments', 'author_id', 'conversation_id', 'context_annotations', 'created_at', 'entities', 'geo', 'id',
-                        'in_reply_to_user_id', 'lang', 'possibly_sensitive', 'public_metrics', 'referenced_tweets',
-                        'source', 'text', 'withheld']
+        tweet_fields = ['attachments', 'author_id', 'conversation_id', 'context_annotations', 'created_at', 'entities',
+                        'geo', 'id', 'in_reply_to_user_id', 'lang', 'possibly_sensitive', 'public_metrics',
+                        'referenced_tweets', 'source', 'text', 'withheld']
 
         self.headers = self._create_headers()
 

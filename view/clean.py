@@ -1,4 +1,6 @@
-from utils.inout import Printer, read_data
+import csv
+
+from utils.inout import *
 from view.window_utils import *
 
 
@@ -144,7 +146,8 @@ class CleanerWindow(QtWidgets.QMainWindow):
         self.close()
 
     def remove_instance(self):
-        self.printer.show_message('Remove button clicked', 1000, 'success')
+        self.data.drop(self.row_id, inplace=True)
+        self.update_screen_record()
 
     def commit_changes(self):
-        self.printer.show_message('Commit button clicked', 1000, 'success')
+        self.data.to_csv(os.path.join(DATA_PATH, CLEAN_FILE), index=False, quoting=csv.QUOTE_ALL)

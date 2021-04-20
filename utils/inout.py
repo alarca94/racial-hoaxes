@@ -1,4 +1,5 @@
 import os
+import shutil
 import pandas as pd
 
 from ast import literal_eval
@@ -7,20 +8,22 @@ from ast import literal_eval
 DATA_PATH = './data'
 DOWNLOAD_FILE = 'downloaded_tweets.csv'
 CLEAN_FILE = 'kept_tweets.csv'
+ANNOTATE_FILE = 'labeled_tweets.csv'
 
 
 def read_data(stage='clean'):
     if stage == 'clean':
-        file = DOWNLOAD_FILE
+        file_path = os.path.join(DATA_PATH, CLEAN_FILE)
+        if not os.path.isfile(file_path):
+            shutil.copy(os.path.join(DATA_PATH, DOWNLOAD_FILE), file_path)
     elif stage == 'annotate':
-        file = CLEAN_FILE
+        file_path = os.path.join(DATA_PATH, ANNOTATE_FILE)
+        if not os.path.isfile(file_path):
+            shutil.copy(os.path.join(DATA_PATH, CLEAN_FILE), file_path)
 
-    if os.path.isfile(os.path.join(DATA_PATH, file)):
-        list_converter = lambda s: literal_eval(s)
-        converters = {c: list_converter for c in ['urls', 'hashtags', 'annotations']}
-        return pd.read_csv(os.path.join(DATA_PATH, file), encoding='utf-8', converters=converters)
-
-    return None
+    list_converter = lambda s: literal_eval(s)
+    converters = {c: list_converter for c in ['urls', 'hashtags', 'annotations']}
+    return pd.read_csv(file_path, encoding='utf-8', converters=converters)
 
 
 class Printer:
