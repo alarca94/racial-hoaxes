@@ -1,4 +1,5 @@
 import csv
+import re
 
 from utils.inout import *
 from view.window_utils import *
@@ -21,7 +22,7 @@ class AnnotatorWindow(QtWidgets.QMainWindow):
 
         # -------------- SETTING THE LAYOUTS -------------- #
         gen_layout = get_layout(QtWidgets.QVBoxLayout())
-        upper_layout = get_layout(QtWidgets.QHBoxLayout())
+        upper_layout = get_layout(QtWidgets.QVBoxLayout())
         middle_layout = get_layout(QtWidgets.QHBoxLayout())
         bottom_layout = get_layout(QtWidgets.QHBoxLayout())
 
@@ -45,55 +46,126 @@ class AnnotatorWindow(QtWidgets.QMainWindow):
 
     def retrieve_data(self):
         self.data = read_data(stage='annotate')
+        self.data['date'] = pd.to_datetime(self.data['date'].values)
         # If it is the first time annotating the data, add label columns
         if list(self.label_default.keys())[0] not in self.data.columns:
             for col in self.label_default:
                 self.data[col] = [self.label_default[col]] * self.data.shape[0]
             self.commit_changes()
 
-    def update_screen_record(self):
-        self.tweet.setText(self.data.iloc[self.row_id].text)
-        self.links.setText(self.get_current_links())
-        self.id_marker.setText(str(self.row_id))
-        self.stereotype.setCurrentText(self.data.iloc[self.row_id].stereotype)
-        self.target.setCurrentText(self.data.iloc[self.row_id].target)
-        self.sentiment.setCurrentText(self.data.iloc[self.row_id].sentiment)
+    @staticmethod
+    def clean_text(text):
+        url_regex = '(http|ftp|https)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?'
+        user_regex = '@[\w\d]+'
+        text = re.sub(url_regex, '[LINK]', text)
+        text = re.sub(user_regex, '[USER]', text)
+        text = re.sub('\s+', ' ', text)
+        return text
 
-    def get_current_links(self):
-        links = self.data.iloc[self.row_id].urls
+    def update_screen_record(self):
+        row = self.data.iloc[self.row_id]
+        row.text = self.clean_text(row.text)
+        self.tweet.setText(row.text)
+        self.links.setText(self.get_current_links(row))
+        self.id_marker.setText(str(self.row_id))
+        self.stereotype.setCurrentText(row.stereotype)
+        self.target.setCurrentText(row.target)
+        self.sentiment.setCurrentText(row.sentiment)
+        self.likes.setText(str(row.like_count))
+        self.quotes.setText(str(row.quote_count))
+        self.replies.setText(str(row.reply_count))
+        self.retweets.setText(str(row.retweet_count))
+        self.date.setText(row.date.strftime('%m-%d-%Y, %H:%M:%S'))
+        self.hashtags.setText(',\n'.join([f'#{h}' for h in row.hashtags]))
+        self.annotations.setText('\n'.join([f'{a[0]} :: {a[1]}' for a in row.annotations]))
+        self.possibly_sensitive.setText(('No', 'Yes')[row.possibly_sensitive])
+        if not pd.isna(row.place_name):
+            self.place.setText('\n'.join([row.place_name, row.country]))
+        else:
+            self.place.setText('')
+
+    @staticmethod
+    def get_current_links(row):
+        links = row.urls
         if links:
-            return '\n'.join([f'<a href="{l}">Link {i+1}</a>: {l}' for i, l in enumerate(links)])
+            return '<br/>'.join([f'<a href="{l}">Link {i+1}</a>: {l}' for i, l in enumerate(links)])
 
         return ''
 
+    @staticmethod
+    def get_qtextbrowser():
+        widget = QtWidgets.QTextBrowser()
+        widget.setAcceptRichText(True)
+        widget.setOpenExternalLinks(True)
+        widget.setReadOnly(True)
+        widget.setFixedHeight(150)
+        return widget
+
+    def get_qlabel(self, text, font_weight='normal', size=(None, None), alignment=Qt.AlignCenter):
+        widget = QtWidgets.QLabel()
+        widget.setText(text)
+        widget.setAlignment(alignment)
+        self.set_labels([widget], '3B3B34', 'FFFFFFFF', size, font_weight, alignment)
+        return widget
+
+    @staticmethod
+    def set_labels(labels, background_color, color, size, font_weight='bold', alignment=Qt.AlignCenter):
+        for l in labels:
+            l.setStyleSheet(f'background-color:#{background_color};color:#{color};font-weight:{font_weight};')
+            l.setAlignment(alignment)
+            if size[0] is not None:
+                l.setFixedHeight(size[0])
+            if size[1] is not None:
+                l.setFixedWidth(size[1])
+
     def add_tweet_viewer(self, layout):
         grid_layout = QtWidgets.QGridLayout()
+        grid_layout2 = QtWidgets.QGridLayout()
 
         labels = []
-        self.tweet = QtWidgets.QTextBrowser()
-        self.tweet.setAcceptRichText(True)
-        self.tweet.setOpenExternalLinks(True)
-        self.tweet.setReadOnly(True)
+        self.tweet = self.get_qtextbrowser()
         labels.append(QtWidgets.QLabel('TWEET'))
 
-        self.links = QtWidgets.QTextBrowser()
-        self.links.setAcceptRichText(True)
-        self.links.setOpenExternalLinks(True)
-        self.links.setReadOnly(True)
+        self.links = self.get_qtextbrowser()
         labels.append(QtWidgets.QLabel('LINKS'))
 
-        l_height = 50
-        for l in labels:
-            l.setStyleSheet('background-color:#FAEB7C;color:#000000;font-weight: bold;')
-            l.setAlignment(Qt.AlignCenter)
-            l.setFixedHeight(l_height)
+        labels.append(QtWidgets.QLabel('LIKES'))
+        labels.append(QtWidgets.QLabel('REPLIES'))
+        labels.append(QtWidgets.QLabel('RETWEETS'))
+        labels.append(QtWidgets.QLabel('QUOTES'))
+        labels.append(QtWidgets.QLabel('DATE'))
+        labels.append(QtWidgets.QLabel('POSSIBLY SENSITIVE'))
+        labels.append(QtWidgets.QLabel('ANNOTATIONS'))
+        labels.append(QtWidgets.QLabel('HASHTAGS'))
+        labels.append(QtWidgets.QLabel('PLACE'))
+
+        box_width = None
+        self.likes = self.get_qlabel('', font_weight='bold', size=(30, box_width), alignment=Qt.AlignCenter)
+        self.replies = self.get_qlabel('', font_weight='bold', size=(30, box_width), alignment=Qt.AlignCenter)
+        self.retweets = self.get_qlabel('', font_weight='bold', size=(30, box_width), alignment=Qt.AlignCenter)
+        self.quotes = self.get_qlabel('', font_weight='bold', size=(30, box_width), alignment=Qt.AlignCenter)
+        self.date = self.get_qlabel('', size=(30, box_width), alignment=Qt.AlignCenter)
+        self.possibly_sensitive = self.get_qlabel('', size=(30, box_width), alignment=Qt.AlignCenter)
+        self.annotations = self.get_qlabel('', size=(30, box_width), alignment=Qt.AlignCenter)
+        self.hashtags = self.get_qlabel('', size=(30, box_width), alignment=Qt.AlignCenter)
+        self.place = self.get_qlabel('', size=(30, box_width), alignment=Qt.AlignCenter)
+
+        self.set_labels(labels[:2], background_color='FAEB7C', color='000000', size=(50, None))
+        self.set_labels(labels[2:], background_color='FAEB7C', color='000000', size=(30, box_width))
 
         grid_layout.addWidget(labels[0], 0, 0)
         grid_layout.addWidget(self.tweet, 1, 0)
         grid_layout.addWidget(labels[1], 0, 1)
         grid_layout.addWidget(self.links, 1, 1)
+        for i, l in enumerate(labels[2:]):
+            grid_layout2.addWidget(l, 0, i)
+        extra_widgets = [self.likes, self.replies, self.retweets, self.quotes, self.date, self.possibly_sensitive,
+                         self.annotations, self.hashtags, self.place]
+        for i, w in enumerate(extra_widgets):
+            grid_layout2.addWidget(w, 1, i)
 
-        layout.addLayout(grid_layout, Qt.AlignCenter)
+        layout.addLayout(grid_layout, 70)
+        layout.addLayout(grid_layout2, 30)
 
     def add_labelling_fields(self, layout):
         grid_layout = QtWidgets.QGridLayout()

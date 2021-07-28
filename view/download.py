@@ -6,6 +6,7 @@ from PyQt5 import QtGui
 from utils.inout import Printer
 from utils.search import Searcher
 from view.window_utils import *
+from utils.constants import *
 
 
 class DownloadWindow(QtWidgets.QMainWindow):
@@ -85,15 +86,8 @@ class DownloadWindow(QtWidgets.QMainWindow):
         self.max_tweets.setMinimumSize(300, 0)
         labels.append(QtWidgets.QLabel('MAXIMUM NUMBER OF TWEETS'))
         # Select the language of the tweets
-        self.available_langs = {'Spanish': 'es', 'English': 'en', 'French': 'fr', 'Arabic': 'ar', 'Japanese': 'ja',
-                                'German': 'de', 'Italian': 'it', 'Indonesian': 'id', 'Portuguese': 'pt', 'Korean': 'ko',
-                                'Turkish': 'tr', 'Russian': 'ru', 'Dutch': 'nl', 'Filipino': 'fil', 'Malay': 'msa',
-                                'Traditional Chinese': 'zh-tw', 'Simplified Chinese': 'zh-cn', 'Hindi': 'hi',
-                                'Norwegian': 'no', 'Swedish': 'sv', 'Finnish': 'fi', 'Danish': 'da', 'Polish': 'pl',
-                                'Hungarian': 'hu', 'Farsi': 'fa', 'Hebrew': 'he', 'Urdu': 'ur', 'Thai': 'th',
-                                'English UK': 'en-gb'}
         self.language = QtWidgets.QComboBox()
-        self.language.addItems(self.available_langs.keys())
+        self.language.addItems(AVAILABLE_LANGS.keys())
         labels.append(QtWidgets.QLabel('LANGUAGE'))
 
         l_height = 50
@@ -147,7 +141,7 @@ class DownloadWindow(QtWidgets.QMainWindow):
                             'keywords': keywords,
                             'date_since': self.start_date.dateTime().toString('yyyy-MM-dd'),
                             'date_to': self.end_date.dateTime().addDays(1).toString('yyyy-MM-dd'),
-                            'lang': self.available_langs[self.language.currentText()],
+                            'lang': AVAILABLE_LANGS[self.language.currentText()],
                             'max_tweets': max_tweets,
                             'max_results': min(500, max_tweets)}
             self.hashtags.setText(' OR '.join(hashtags))

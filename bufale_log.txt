@@ -1,0 +1,826 @@
+[94m IT001 ⟶ bufale ⟶ “Turisti” ad Alassio per accerchiare e rapinare i ragazzini, 7 arresti[0m
+Number of tweets retrieved: 2
+[94m IT002 ⟶ bufale ⟶ I migranti hanno mangiato i miei quattro cani[0m
+Number of tweets retrieved: 7
+[94m IT003 ⟶ bufale ⟶ RAGAZZO ITALIANO MASSACRATO DI BOTTE DA 3 IMMIGRATI-VIDEO[0m
+Number of tweets retrieved: 12
+[94m IT004 ⟶ bufale ⟶ Coronavirus, i neri immuni al Covid-19? L'America dimostra il contrario[0m
+Number of tweets retrieved: 4
+[94m IT005 ⟶ bufale ⟶ Napoli, delirio in piazza Garibaldi: immigrati in festa in barba alle norme anti assembramento[0m
+Number of tweets retrieved: 1
+[94m IT006 ⟶ bufale ⟶ Dilaga il Coronavirus, Governo va a prendere di nascosto clandestini in Africa[0m
+Number of tweets retrieved: 40
+[94m IT007 ⟶ bufale ⟶ Il Coronavirus è arrivato in Africa: afferma ministro Russo, mentre l’OMS dice che ancora non risultano[0m
+Number of tweets retrieved: 3
+[94m IT008 ⟶ bufale ⟶ Insulti razzisti alla Kyenge: “Vicesindaco assolto perché ‘neg*a’ si può dire”, ma è una comoda semplificazione[0m
+Number of tweets retrieved: 2
+[94m IT009 ⟶ bufale ⟶ Toscana, 70enne violentata in spiaggia. Matteo Salvini: "Clandestino e pregiudicato, castrazione chimica ed espulsione"[0m
+Number of tweets retrieved: 8
+[94m IT010 ⟶ bufale ⟶ Daniela Santanchè contro l'immigrato che insulta la capotreno: "Ecco le risorse della sinistra. A casa, subito"[0m
+Number of tweets retrieved: 7
+[94m IT011 ⟶ bufale ⟶ Immigrazione, sul barcone con musica a tutto volume e coltello: il video-choc rilanciato da Matteo Salvini[0m
+Number of tweets retrieved: 15
+[94m IT012 ⟶ bufale ⟶ Rieti, immigrato senza pantaloni e mutande cammina in centro: il video del degrado, immagini forti[0m
+Number of tweets retrieved: 11
+[94m IT013 ⟶ bufale ⟶ Matteo Salvini contro Domenico De Masi: "Svecchiare la popolazione italiana con i clandestini? Avanti, c'è posto"[0m
+Number of tweets retrieved: 3
+[94m IT014 ⟶ bufale ⟶ "Il Patto va nella giusta direzione". Migranti e asilo, premier Conte si piega ancora all'Ue[0m
+Number of tweets retrieved: 2
+[94m IT015 ⟶ bufale ⟶ Savona, ragazza italiana rifiuta di sposare un marocchino irregolare e tentano di ucciderla con un overdose: 7 arresti[0m
+Number of tweets retrieved: 5
+[94m IT016 ⟶ bufale ⟶ Immigrati nigeriani protestano in strada a Roma. "Assembramenti e mascherine, per loro le regole non valgono?"[0m
+Number of tweets retrieved: 5
+[94m IT017 ⟶ bufale ⟶ Immigrazione, retromarcia del M5s: "Svecchiare gli italiani accogliendo migranti, loro sempre più nelle nostre case"[0m
+Number of tweets retrieved: 15
+[94m IT018 ⟶ bufale ⟶ Immigrazione, sassaiola al centro profughi contro gli agenti. La polizia: "Sfacelo assoluto, governo incapace"[0m
+Number of tweets retrieved: 5
+[94m IT019 ⟶ bufale ⟶ Immigrazione, oltre mille profughi positivi al Covid devastano i centri rimpatri per fuggire[0m
+Number of tweets retrieved: 15
+[94m IT020 ⟶ bufale ⟶ Matteo Salvini sulle rivolte degli immigrati: "Governo duro con gli italiani, debole coi clandestini"[0m
+No data was retrieved with the following query: {'keys': 'Matteo Salvini sulle rivolte degli immigrati: "Governo duro con gli italiani, debole coi clandestini"', 'date_since': '2016-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT021 ⟶ bufale ⟶ MILANO È DEI CLANDESTINI: LA SCUOLA OCCUPATA DAGLI AFRICANI – VIDEO[0m
+Number of tweets retrieved: 6
+[94m IT022 ⟶ bufale ⟶ Al centro profughi il focolaio si allarga: salgono a 22 i contagi tra gli immigrati[0m
+Number of tweets retrieved: 6
+[94m IT023 ⟶ bufale ⟶ Immigrato positivo lascia quarantena e prende la metro a Milano[0m
+No data was retrieved with the following query: {'keys': 'Immigrato positivo lascia quarantena e prende la metro a Milano', 'date_since': '2016-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT024 ⟶ bufale ⟶ Covid, gli immigrati fanno quello che vogliono. Regole e multe valgono solo per gli italiani[0m
+Number of tweets retrieved: 8
+[94m IT025 ⟶ bufale ⟶ Gli immigrati fuori controllo: fuggono e feriscono un agente[0m
+Number of tweets retrieved: 6
+[94m IT026 ⟶ bufale ⟶ Immigrati positivi devastano centro: “Cibo fa schifo” – VIDEO[0m
+Number of tweets retrieved: 2
+[94m IT027 ⟶ bufale ⟶ Immigrato positivo in fuga dall'ospedale[0m
+Number of tweets retrieved: 2
+[94m IT028 ⟶ bufale ⟶ Migrante con il Covid rimpatriato. E ora 100 agenti sono in quarantena[0m
+Number of tweets retrieved: 1
+[94m IT029 ⟶ bufale ⟶ Lampedusa scoppia di immigrati a rischio Covid. Il sindaco urla la sua rabbia a Conte[0m
+Number of tweets retrieved: 4
+[94m IT030 ⟶ bufale ⟶ Rivolta in un centro di accoglienza a Roma, migranti col Covid prendono ostaggi: “Vogliamo uscire”[0m
+Number of tweets retrieved: 7
+[94m IT031 ⟶ bufale ⟶ Migranti, se ne infischiano di Covid e Dpcm: affollano le sale scommesse Snai. Per loro niente regole (video)[0m
+Number of tweets retrieved: 6
+[94m IT032 ⟶ bufale ⟶ Milano, poliziotti e finanzieri sedano la rivolta dei clandestini e si beccano il Covid: caserma in quarantena (Video)[0m
+Number of tweets retrieved: 2
+[94m IT033 ⟶ bufale ⟶ Bari, focolaio Covid sulla nave quarantena: altri 24 positivi ai test oltre i 50 contagiati, 18 clandestini in fuga[0m
+No data was retrieved with the following query: {'keys': 'Bari, focolaio Covid sulla nave quarantena: altri 24 positivi ai test oltre i 50 contagiati, 18 clandestini in fuga', 'date_since': '2016-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT034 ⟶ bufale ⟶ IMMIGRATI ASSEMBRATI A VENDERE MERCE RUBATA, POLIZIOTTI COSTRETTI A GUARDARE[0m
+Number of tweets retrieved: 2
+[94m IT035 ⟶ bufale ⟶ IMMIGRATI INFETTI, CENTRO ACCOGLIENZA DIVENTA ZONA ROSSA: “BOMBA SANITARIA CON 1.000 OSPITI”[0m
+Number of tweets retrieved: 4
+[94m IT036 ⟶ bufale ⟶ L’INVASIONE DEGLI INFETTI: GOVERNO CERCA HOTEL DOVE METTERE IN QUARANTENA GLI IMMIGRATI[0m
+Number of tweets retrieved: 1
+[94m IT037 ⟶ bufale ⟶ IMMIGRATI INFETTI, FOCOLAIO DI CORONAVIRUS IN CENTRO ACCOGLIENZA GESTITO DAL PRETE: 700 OSPITI![0m
+Number of tweets retrieved: 2
+[94m IT038 ⟶ bufale ⟶ Le chiese, i coltelli, la carità: quei parroci dei poveri, uccisi dagli immigrati che aiutavano. Cosa c’è dietro queste storie[0m
+Number of tweets retrieved: 1
+[94m IT039 ⟶ bufale ⟶ Altra fuga di immigrati: bloccati con elicotteri. In Sicilia è il Far West[0m
+Number of tweets retrieved: 17
+[94m IT040 ⟶ bufale ⟶ Valanga di immigrati positivi: allerta a Treviso e Lampedusa[0m
+Number of tweets retrieved: 10
+[94m IT041 ⟶ bufale ⟶ “Qui comandano gli immigrati” Il palazzo è il “regno” del virus[0m
+Number of tweets retrieved: 6
+[94m IT042 ⟶ bufale ⟶ Bomba focolai tra gli immigrati[0m
+Number of tweets retrieved: 10
+[94m IT043 ⟶ bufale ⟶ Covid, un dossier spaventa l’Italia: 650mila migranti pronti a partire[0m
+Number of tweets retrieved: 9
+[94m IT044 ⟶ bufale ⟶ Renato Farina svergogna il governo: “Soldi agli immigrati, non ai medici eroi. Il decreto Abracadabra”[0m
+Number of tweets retrieved: 5
+[94m IT045 ⟶ bufale ⟶ La bomba immigrati e il virus. Tutti quei contagi “silenziosi”[0m
+Number of tweets retrieved: 15
+[94m IT046 ⟶ bufale ⟶ Hotel e ostelli per stranieri positivi: nuovo step dell’accoglienza[0m
+Number of tweets retrieved: 8
+[94m IT047 ⟶ bufale ⟶ Migranti, inferno a bordo: botte agli agenti per fuggire dalla nave quarantena. 2 si tuffano in mare (video)[0m
+Number of tweets retrieved: 3
+[94m IT048 ⟶ bufale ⟶ Nasce il partito degli immigrati: "sarà una lotta senza quartiere". Promettono guerriglia[0m
+Number of tweets retrieved: 4
+[94m IT049 ⟶ bufale ⟶ Nuova legge europea: dal 1 gennaio 2020 i soldi inseriti nel carrello non si potranno più riprendere e saranno donati agli immigrati[0m
+No data was retrieved with the following query: {'keys': 'Nuova legge europea: dal 1 gennaio 2020 i soldi inseriti nel carrello non si potranno più riprendere e saranno donati agli immigrati', 'date_since': '2015-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT050 ⟶ bufale ⟶ Saviano: "Sinceramente preferisco salvare i rifugiati e i miei fratelli clandestini che aiutare qualche terremotato italiano piagnucolone e viziato"[0m
+Number of tweets retrieved: 1
+[94m IT051 ⟶ bufale ⟶ Perugia, monastero ospita immigrati. Incinte sei suore[0m
+Number of tweets retrieved: 108
+[94m IT052 ⟶ bufale ⟶ Il numero di bambini statunitensi violentati da immigrati illegali nel 2018 è stato un incredibile 10.800, secondo i dati compilati da NCFIRE (North Carolinians for Immigration Reform and Enforcement).[0m
+No data was retrieved with the following query: {'keys': 'Il numero di bambini statunitensi violentati da immigrati illegali nel 2018 è stato un incredibile 10.800, secondo i dati compilati da NCFIRE (North Carolinians for Immigration Reform and Enforcement).', 'date_since': '2015-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT053 ⟶ bufale ⟶ Macron: “L’Italia era un Paese fascista, si merita tutti gli immigrati”[0m
+Number of tweets retrieved: 103
+[94m IT054 ⟶ bufale ⟶ Boldrini: "Gli Immigrati sono senza soldi e non è giusto”[0m
+Number of tweets retrieved: 8
+[94m IT055 ⟶ bufale ⟶ Pecora elettrica, è stato un tunisino: nordafricani vogliono prendersi il quartiere.[0m
+Number of tweets retrieved: 74
+[94m IT056 ⟶ bufale ⟶ Alpino a processo per essersi opposto ad alpino marocchino: "è razzismo".[0m
+Number of tweets retrieved: 12
+[94m IT057 ⟶ bufale ⟶ Profugo confessa: "Fuggito in Italia perché ho ucciso tante persone".[0m
+Number of tweets retrieved: 23
+[94m IT058 ⟶ bufale ⟶ Clandestini appena sbarcati a caccia di donne a Lampedusa: razziano le case e scippano turisti[0m
+Number of tweets retrieved: 55
+[94m IT059 ⟶ bufale ⟶ Prenestina, chiude l'asilo nido: diventerà un centro per immigrati[0m
+Number of tweets retrieved: 1
+[94m IT060 ⟶ bufale ⟶ Deposito di armi trovato in centro profughi[0m
+Number of tweets retrieved: 30
+[94m IT061 ⟶ bufale ⟶ Renzi organizza corsi di sci per profughi in settimana bianca[0m
+Number of tweets retrieved: 22
+[94m IT062 ⟶ bufale ⟶ Ultim’ora: Guardia Giurata uccisa a sprangate da due senegalesi[0m
+Number of tweets retrieved: 34
+[94m IT063 ⟶ bufale ⟶ Ventimiglia al collasso, poliziotti accusano: «Andato Salvini, Macron ci rimanda 100 immigrati al giorno»[0m
+Number of tweets retrieved: 33
+[94m IT064 ⟶ bufale ⟶ Censurata la preghiera degli alpini per non offendere gli immigrati[0m
+Number of tweets retrieved: 273
+[94m IT065 ⟶ bufale ⟶ Padre difende figlia da molestie immigrati, magistrato anti-Salvini lo indaga.[0m
+Number of tweets retrieved: 26
+[94m IT066 ⟶ bufale ⟶ Trump: "Immigrati senza documenti hanno ucciso 63mila americani dal 2001 ad oggi".[0m
+No data was retrieved with the following query: {'keys': 'Trump: "Immigrati senza documenti hanno ucciso 63mila americani dal 2001 ad oggi".', 'date_since': '2015-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT067 ⟶ bufale ⟶ La Raggi caccia 55 famiglie italiane da case popolari per darle a immigrati: la Roma a 5 stelle[0m
+Number of tweets retrieved: 21
+[94m IT068 ⟶ bufale ⟶ Dentista gratis agli immigrati: schiaffo agli italiani poveri[0m
+Number of tweets retrieved: 23
+[94m IT069 ⟶ bufale ⟶ Siamo alla follia: ad Agrigento autobus gratis agli immigrati per evitare violenze e aggressioni[0m
+Number of tweets retrieved: 14
+[94m IT070 ⟶ bufale ⟶ Assurdo cosa c’è scritto sul sito ufficiale dell’INPS… Gli immigrati vanno in pensione… Continua a leggere l’articolo!!![0m
+Number of tweets retrieved: 11
+[94m IT071 ⟶ bufale ⟶ Immigrati clandestini, da Dicembre viaggeranno gratis sui mezzi pubblici.[0m
+Number of tweets retrieved: 20
+[94m IT072 ⟶ bufale ⟶ La scuola si inchina all'islam: l'aceto è bandito dalle mense.[0m
+Number of tweets retrieved: 30
+[94m IT073 ⟶ bufale ⟶ Sicilia: estremista islamico uccide il cane della fidanzata perché annusa il Corano.[0m
+Number of tweets retrieved: 12
+[94m IT074 ⟶ bufale ⟶ Roma, cerca di lavargli il vetro e l’automobilista lo manda all’ospedale.[0m
+Number of tweets retrieved: 2
+[94m IT075 ⟶ bufale ⟶ “Italiani m**de! Fate schifo!” slogan iracondi e manifesti a Lampedusa.[0m
+Number of tweets retrieved: 97
+[94m IT076 ⟶ bufale ⟶ Zuckenberg: «account gold gratuito per gli immigrati, per favorire l’integrazione»[0m
+No data was retrieved with the following query: {'keys': 'Zuckenberg: «account gold gratuito per gli immigrati, per favorire l’integrazione»', 'date_since': '2015-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT077 ⟶ bufale ⟶ Sbarca la carta per i migranti: possono prelevare fino a 37 euro al giorno![0m
+Number of tweets retrieved: 221
+[94m IT078 ⟶ bufale ⟶ Italia. Eletto il primo sindaco immigrato clandestino: “Così cambierò la politica italiana”.[0m
+Number of tweets retrieved: 16
+[94m IT079 ⟶ bufale ⟶ Venezia, donne velate sputano al crocifisso.[0m
+Number of tweets retrieved: 33
+[94m IT080 ⟶ bufale ⟶ Immigrato dichiara: “Che i terremotati si fottano, non voglio andarmene dall’hotel”.[0m
+Number of tweets retrieved: 29
+[94m IT081 ⟶ bufale ⟶ Ai profughi 35 euro, ai terremotati solo 25, giustizia canaglia (Immagine di una prima pagina di giornale)[0m
+No data was retrieved with the following query: {'keys': 'Ai profughi 35 euro, ai terremotati solo 25, giustizia canaglia (Immagine di una prima pagina di giornale)', 'date_since': '2015-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT082 ⟶ bufale ⟶ Immigrati in fila per l’iPhone 7 grazie al bonus di 500€ della UE.[0m
+Number of tweets retrieved: 10
+[94m IT083 ⟶ bufale ⟶ Immigrati stuprano ragazza italiana di 16 anni, poi la uccidono.[0m
+Number of tweets retrieved: 330
+[94m IT084 ⟶ bufale ⟶ Boldrini: non fate figli, adottate immigrati.[0m
+Number of tweets retrieved: 36
+[94m IT085 ⟶ bufale ⟶ Catania, 15enne bruciato vivo da immigrati: Massacrato perché cristiano.[0m
+Number of tweets retrieved: 37
+[94m IT086 ⟶ bufale ⟶ Terni – Immigrati africani irrompono in chiesa e rubano la salma di San Valentino.[0m
+Number of tweets retrieved: 3
+[94m IT090 ⟶ bufale ⟶ Immigrato violenta bambina di 7 anni. Il padre gli taglia le palle e gliele fa ingoiare[0m
+Number of tweets retrieved: 500
+Number of tweets retrieved: 643
+[94m IT092 ⟶ bufale ⟶ Napoli, ospitano un pakistano a cena: stupra la figlia e viene picchiato dal padre[0m
+Number of tweets retrieved: 3
+[94m IT095 ⟶ bufale ⟶ PD organizza vacanze in Puglia per chi non può permettersele: ma solo immigrati (foto e frase/meme)[0m
+No data was retrieved with the following query: {'keys': 'PD organizza vacanze in Puglia per chi non può permettersele: ma solo immigrati (foto e frase/meme)', 'date_since': '2015-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT096 ⟶ bufale ⟶ Il 91% degli immigrati che sbarca in Italia è affetto dal morbo di Onan (foto e frase)[0m
+No data was retrieved with the following query: {'keys': 'Il 91% degli immigrati che sbarca in Italia è affetto dal morbo di Onan (foto e frase)', 'date_since': '2015-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m IT097 ⟶ bufale ⟶ La Kyenge contro gli italiani: fannulloni, gli immigrati fanno di più (foto e frase)[0m
+No data was retrieved with the following query: {'keys': 'La Kyenge contro gli italiani: fannulloni, gli immigrati fanno di più (foto e frase)', 'date_since': '2015-01-01', 'date_to': '', 'lang': 'it', 'max_tweets': 100000, 'max_results': 500}
+[94m Expanding 315 conversations for bufale fact checker...[0m
+[94m Expanding 1292084041177538561 corresponding to IT002...[0m
+Number of tweets retrieved: 16
+[94m Expanding 1291812537957220352 corresponding to IT002...[0m
+Number of tweets retrieved: 7
+[94m Expanding 1291694369221816321 corresponding to IT002...[0m
+Number of tweets retrieved: 5
+[94m Expanding 1303347458530070528 corresponding to IT003...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1303043366377136128 corresponding to IT003...[0m
+Number of tweets retrieved: 8
+[94m Expanding 1303029471390429184 corresponding to IT003...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1303027634033643520 corresponding to IT003...[0m
+Number of tweets retrieved: 4
+[94m Expanding 1233841360567967745 corresponding to IT006...[0m
+Number of tweets retrieved: 58
+[94m Expanding 1232566353141346304 corresponding to IT006...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1231955143027036160 corresponding to IT006...[0m
+Number of tweets retrieved: 3
+[94m Expanding 1231639617373429760 corresponding to IT006...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1231138857913065473 corresponding to IT006...[0m
+Number of tweets retrieved: 499
+Number of tweets retrieved: 949
+[94m Expanding 1231598749631250432 corresponding to IT006...[0m
+Number of tweets retrieved: 3
+[94m Expanding 1231518036676534272 corresponding to IT006...[0m
+Number of tweets retrieved: 496
+Number of tweets retrieved: 993
+Number of tweets retrieved: 1451
+[94m Expanding 1319919309251055616 corresponding to IT009...[0m
+Number of tweets retrieved: 3
+[94m Expanding 1319918050829795328 corresponding to IT009...[0m
+Number of tweets retrieved: 41
+[94m Expanding 1319706410851180549 corresponding to IT009...[0m
+Number of tweets retrieved: 6
+[94m Expanding 1319682302788685828 corresponding to IT009...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1319677533936406530 corresponding to IT009...[0m
+Number of tweets retrieved: 9
+[94m Expanding 1319557074687315968 corresponding to IT010...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1319557074687315968}
+[94m Expanding 1319336185446211595 corresponding to IT010...[0m
+Number of tweets retrieved: 31
+[94m Expanding 1319686400523014145 corresponding to IT011...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1319516665730785282 corresponding to IT011...[0m
+Number of tweets retrieved: 46
+[94m Expanding 1319197822802186245 corresponding to IT011...[0m
+Number of tweets retrieved: 7
+[94m Expanding 1319196036397715458 corresponding to IT011...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1319196036397715458}
+[94m Expanding 1318939100767002626 corresponding to IT012...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1318937843209801729 corresponding to IT012...[0m
+Number of tweets retrieved: 39
+[94m Expanding 1318920433266233346 corresponding to IT012...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1318920433266233346}
+[94m Expanding 1318858911676616705 corresponding to IT012...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1318852688172417024 corresponding to IT012...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1318498121157087233 corresponding to IT015...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1318541928120594435 corresponding to IT016...[0m
+Number of tweets retrieved: 5
+[94m Expanding 1318540229838573569 corresponding to IT017...[0m
+Number of tweets retrieved: 12
+[94m Expanding 1318538971366985733 corresponding to IT017...[0m
+Number of tweets retrieved: 25
+[94m Expanding 1318489110101753856 corresponding to IT017...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1318324263724658691 corresponding to IT017...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1318298855784460293 corresponding to IT017...[0m
+Number of tweets retrieved: 3
+[94m Expanding 1317328188452851712 corresponding to IT019...[0m
+Number of tweets retrieved: 5
+[94m Expanding 1317064253959000070 corresponding to IT019...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1317061734729977856 corresponding to IT019...[0m
+Number of tweets retrieved: 30
+[94m Expanding 1317005147155947521 corresponding to IT019...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1318106756174778368 corresponding to IT024...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1318106756174778368}
+[94m Expanding 1317812642799603716 corresponding to IT024...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1317761221240655878 corresponding to IT024...[0m
+Number of tweets retrieved: 3
+[94m Expanding 1296682671154896899 corresponding to IT029...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1296682671154896899}
+[94m Expanding 1296483650855473153 corresponding to IT029...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1319317602120790022 corresponding to IT030...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1319268782963970055 corresponding to IT031...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1316834020437696512 corresponding to IT032...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1312805492482342914 corresponding to IT034...[0m
+Number of tweets retrieved: 7
+[94m Expanding 1306122813502259200 corresponding to IT038...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1292738970338693120 corresponding to IT039...[0m
+Number of tweets retrieved: 6
+[94m Expanding 1292737712060084226 corresponding to IT039...[0m
+Number of tweets retrieved: 14
+[94m Expanding 1292577623902752774 corresponding to IT039...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1292542779797704708 corresponding to IT039...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1292526931196469250 corresponding to IT039...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1291816136242331650 corresponding to IT040...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1291816136242331650}
+[94m Expanding 1291807458739007488 corresponding to IT040...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1276430381437288450 corresponding to IT041...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1276430381437288450}
+[94m Expanding 1272247451941036034 corresponding to IT042...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1272247451941036034}
+[94m Expanding 1266398081601417217 corresponding to IT043...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1312334905607688193 corresponding to IT045...[0m
+Number of tweets retrieved: 499
+Number of tweets retrieved: 997
+Number of tweets retrieved: 1293
+[94m Expanding 1249963254656512005 corresponding to IT045...[0m
+Number of tweets retrieved: 3
+[94m Expanding 1240039995907375106 corresponding to IT045...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1239887426476277760 corresponding to IT045...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1239887426476277760}
+[94m Expanding 1320350927698776065 corresponding to IT046...[0m
+Number of tweets retrieved: 2
+[94m Expanding 921206772156727296 corresponding to IT051...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 921206772156727296}
+[94m Expanding 919962944368271360 corresponding to IT051...[0m
+Number of tweets retrieved: 1
+[94m Expanding 919957087425310720 corresponding to IT051...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 919957087425310720}
+[94m Expanding 919952090742607872 corresponding to IT051...[0m
+Number of tweets retrieved: 10
+[94m Expanding 919937005215248385 corresponding to IT051...[0m
+Number of tweets retrieved: 1
+[94m Expanding 919902076003643392 corresponding to IT051...[0m
+Number of tweets retrieved: 6
+[94m Expanding 919872006455267328 corresponding to IT051...[0m
+Number of tweets retrieved: 1
+[94m Expanding 919865786809946112 corresponding to IT051...[0m
+Number of tweets retrieved: 26
+[94m Expanding 919825369351454720 corresponding to IT051...[0m
+Number of tweets retrieved: 9
+[94m Expanding 919807697222098944 corresponding to IT051...[0m
+Number of tweets retrieved: 4
+[94m Expanding 919689837518635008 corresponding to IT051...[0m
+Number of tweets retrieved: 1
+[94m Expanding 919651809563762690 corresponding to IT051...[0m
+Number of tweets retrieved: 16
+[94m Expanding 919651162118393857 corresponding to IT051...[0m
+Number of tweets retrieved: 4
+[94m Expanding 919651149334106114 corresponding to IT051...[0m
+Number of tweets retrieved: 17
+[94m Expanding 919650332577320960 corresponding to IT051...[0m
+Number of tweets retrieved: 4
+[94m Expanding 919649123426594816 corresponding to IT051...[0m
+Number of tweets retrieved: 1
+[94m Expanding 919638464177549313 corresponding to IT051...[0m
+Number of tweets retrieved: 1
+[94m Expanding 919628961428180992 corresponding to IT051...[0m
+Number of tweets retrieved: 2
+[94m Expanding 919516277164707840 corresponding to IT051...[0m
+Number of tweets retrieved: 1
+[94m Expanding 919505309999214592 corresponding to IT051...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1089611153175650304 corresponding to IT053...[0m
+Number of tweets retrieved: 27
+[94m Expanding 1087799888899985409 corresponding to IT053...[0m
+Number of tweets retrieved: 13
+[94m Expanding 1087586764531867649 corresponding to IT053...[0m
+Number of tweets retrieved: 36
+[94m Expanding 1088018999135354880 corresponding to IT053...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1087804658020691970 corresponding to IT053...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1087800452056580096 corresponding to IT053...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1087776236150099968 corresponding to IT053...[0m
+Number of tweets retrieved: 4
+[94m Expanding 1087712222061776897 corresponding to IT053...[0m
+Number of tweets retrieved: 8
+[94m Expanding 1087634242228707329 corresponding to IT053...[0m
+Number of tweets retrieved: 35
+[94m Expanding 1087644089850441728 corresponding to IT053...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1087433222844305408 corresponding to IT053...[0m
+Number of tweets retrieved: 22
+[94m Expanding 1087397099128475648 corresponding to IT053...[0m
+Number of tweets retrieved: 138
+[94m Expanding 1087557897742176256 corresponding to IT053...[0m
+Number of tweets retrieved: 231
+[94m Expanding 1087382316014546944 corresponding to IT053...[0m
+Number of tweets retrieved: 321
+[94m Expanding 1087434490014851072 corresponding to IT053...[0m
+Number of tweets retrieved: 19
+[94m Expanding 1087449539018194949 corresponding to IT053...[0m
+Number of tweets retrieved: 3
+[94m Expanding 997547290234585088 corresponding to IT053...[0m
+Number of tweets retrieved: 2
+[94m Expanding 993756378987663360 corresponding to IT053...[0m
+Number of tweets retrieved: 1
+[94m Expanding 986962053750542337 corresponding to IT053...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 986962053750542337}
+[94m Expanding 986714656759787521 corresponding to IT053...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 986714656759787521}
+[94m Expanding 986474044219428865 corresponding to IT053...[0m
+Number of tweets retrieved: 1
+[94m Expanding 986206057881047040 corresponding to IT053...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1213207116355457025 corresponding to IT054...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1083808100182867968 corresponding to IT054...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1304021435850149888 corresponding to IT055...[0m
+Number of tweets retrieved: 500
+Number of tweets retrieved: 999
+Number of tweets retrieved: 1196
+[94m Expanding 1193895164030443520 corresponding to IT055...[0m
+Number of tweets retrieved: 186
+[94m Expanding 1223966541185568768 corresponding to IT055...[0m
+Number of tweets retrieved: 500
+Number of tweets retrieved: 681
+[94m Expanding 1209541216456589312 corresponding to IT055...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1201790858313510912 corresponding to IT055...[0m
+Number of tweets retrieved: 12
+[94m Expanding 1199646815576035328 corresponding to IT055...[0m
+Number of tweets retrieved: 119
+[94m Expanding 1194142616943824896 corresponding to IT055...[0m
+Number of tweets retrieved: 26
+[94m Expanding 1195071522869784576 corresponding to IT055...[0m
+Number of tweets retrieved: 28
+[94m Expanding 1194648986587676672 corresponding to IT055...[0m
+Number of tweets retrieved: 8
+[94m Expanding 1194278272240095233 corresponding to IT055...[0m
+Number of tweets retrieved: 20
+[94m Expanding 1194515227200630785 corresponding to IT055...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1194322544108679170 corresponding to IT055...[0m
+Number of tweets retrieved: 20
+[94m Expanding 1192786439949434880 corresponding to IT055...[0m
+Number of tweets retrieved: 8
+[94m Expanding 1194183307719778304 corresponding to IT055...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1194151036606398464 corresponding to IT055...[0m
+Number of tweets retrieved: 12
+[94m Expanding 1193221091294171136 corresponding to IT055...[0m
+Number of tweets retrieved: 61
+[94m Expanding 1194167675917914112 corresponding to IT055...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1194169437634670592 corresponding to IT055...[0m
+Number of tweets retrieved: 13
+[94m Expanding 1194139707388710913 corresponding to IT055...[0m
+Number of tweets retrieved: 3
+[94m Expanding 1193116393790722049 corresponding to IT055...[0m
+Number of tweets retrieved: 210
+[94m Expanding 1192031068645396480 corresponding to IT055...[0m
+Number of tweets retrieved: 201
+[94m Expanding 1193918418543693825 corresponding to IT055...[0m
+Number of tweets retrieved: 74
+[94m Expanding 1193605285644054533 corresponding to IT055...[0m
+Number of tweets retrieved: 139
+[94m Expanding 1193820210572210177 corresponding to IT055...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1193900415106064384 corresponding to IT055...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1193893307258220549 corresponding to IT055...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1193893307258220549}
+[94m Expanding 1193889721858101248 corresponding to IT055...[0m
+Number of tweets retrieved: 36
+[94m Expanding 1182961948117340161 corresponding to IT056...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1182938047043768322 corresponding to IT056...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1182938047043768322}
+[94m Expanding 1189015622702784515 corresponding to IT057...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1176198050114617346 corresponding to IT058...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1174714675486973952 corresponding to IT058...[0m
+Number of tweets retrieved: 6
+[94m Expanding 1170965741950177281 corresponding to IT058...[0m
+Number of tweets retrieved: 1
+[94m Expanding 1166702206873194496 corresponding to IT058...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1166598491327598592 corresponding to IT058...[0m
+Number of tweets retrieved: 3
+[94m Expanding 1166489397845483526 corresponding to IT058...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1166489397845483526}
+[94m Expanding 1166425585410891776 corresponding to IT058...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1166425585410891776}
+[94m Expanding 1166394731712176128 corresponding to IT058...[0m
+Number of tweets retrieved: 60
+[94m Expanding 1166340144393281536 corresponding to IT058...[0m
+Number of tweets retrieved: 60
+[94m Expanding 905019297457635328 corresponding to IT059...[0m
+Number of tweets retrieved: 1
+[94m Expanding 662636053753430016 corresponding to IT060...[0m
+Number of tweets retrieved: 1
+[94m Expanding 662347099409932288 corresponding to IT060...[0m
+Number of tweets retrieved: 1
+[94m Expanding 827874477904101376 corresponding to IT061...[0m
+Number of tweets retrieved: 27
+[94m Expanding 688737539298054144 corresponding to IT061...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1002650549089652736 corresponding to IT062...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1002650549089652736}
+[94m Expanding 1175354395330002944 corresponding to IT063...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1175354395330002944}
+[94m Expanding 1184154906585980929 corresponding to IT064...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1165924109773156352 corresponding to IT064...[0m
+Number of tweets retrieved: 8
+[94m Expanding 1165869589605093377 corresponding to IT064...[0m
+Number of tweets retrieved: 5
+[94m Expanding 900614506270928896 corresponding to IT064...[0m
+Number of tweets retrieved: 3
+[94m Expanding 899977871153909760 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 899870870906294273 corresponding to IT064...[0m
+Number of tweets retrieved: 3
+[94m Expanding 820701929969946624 corresponding to IT064...[0m
+Number of tweets retrieved: 3
+[94m Expanding 750964779318185985 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 634520538518523904 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 572840327473700864 corresponding to IT064...[0m
+Number of tweets retrieved: 500
+Number of tweets retrieved: 1000
+Number of tweets retrieved: 1500
+Number of tweets retrieved: 1561
+[94m Expanding 633641658404487168 corresponding to IT064...[0m
+Number of tweets retrieved: 3
+[94m Expanding 633627341458161664 corresponding to IT064...[0m
+Number of tweets retrieved: 5
+[94m Expanding 633514658356457473 corresponding to IT064...[0m
+Number of tweets retrieved: 2
+[94m Expanding 633494132489592832 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 633373059186094080 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 633359995552206852 corresponding to IT064...[0m
+Number of tweets retrieved: 15
+[94m Expanding 633359119274000384 corresponding to IT064...[0m
+Number of tweets retrieved: 9
+[94m Expanding 633348502198874116 corresponding to IT064...[0m
+Number of tweets retrieved: 3
+[94m Expanding 633346806940889088 corresponding to IT064...[0m
+Number of tweets retrieved: 2
+[94m Expanding 633330094816292865 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 633326758159364096 corresponding to IT064...[0m
+Number of tweets retrieved: 7
+[94m Expanding 633312098785869824 corresponding to IT064...[0m
+Number of tweets retrieved: 3
+[94m Expanding 633309089859280896 corresponding to IT064...[0m
+Number of tweets retrieved: 2
+[94m Expanding 633292771101659136 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 633287813346250753 corresponding to IT064...[0m
+Number of tweets retrieved: 13
+[94m Expanding 633265483513491456 corresponding to IT064...[0m
+Number of tweets retrieved: 48
+[94m Expanding 633273250299138048 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 633269772449382400 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 633265222367576064 corresponding to IT064...[0m
+Number of tweets retrieved: 1
+[94m Expanding 633262489187315712 corresponding to IT064...[0m
+Number of tweets retrieved: 5
+[94m Expanding 1038731742687969280 corresponding to IT065...[0m
+Number of tweets retrieved: 2
+[94m Expanding 1037295791415721984 corresponding to IT065...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 1037295791415721984}
+[94m Expanding 1218827437708075008 corresponding to IT067...[0m
+Number of tweets retrieved: 41
+[94m Expanding 994909198403231746 corresponding to IT067...[0m
+Number of tweets retrieved: 3
+[94m Expanding 982196413198028801 corresponding to IT068...[0m
+Number of tweets retrieved: 1
+[94m Expanding 961258351475732481 corresponding to IT069...[0m
+Number of tweets retrieved: 3
+[94m Expanding 960175021447630848 corresponding to IT069...[0m
+Number of tweets retrieved: 1
+[94m Expanding 819233092011491332 corresponding to IT070...[0m
+Number of tweets retrieved: 2
+[94m Expanding 795720929896759304 corresponding to IT071...[0m
+Number of tweets retrieved: 1
+[94m Expanding 793919390811099137 corresponding to IT071...[0m
+Number of tweets retrieved: 3
+[94m Expanding 689237481829568512 corresponding to IT072...[0m
+Number of tweets retrieved: 1
+[94m Expanding 689193078238916608 corresponding to IT072...[0m
+Number of tweets retrieved: 1
+[94m Expanding 689042488208797696 corresponding to IT072...[0m
+Number of tweets retrieved: 3
+[94m Expanding 689029193196269569 corresponding to IT072...[0m
+Number of tweets retrieved: 1
+[94m Expanding 757490704448909313 corresponding to IT073...[0m
+Number of tweets retrieved: 20
+[94m Expanding 757460769881677824 corresponding to IT073...[0m
+Number of tweets retrieved: 6
+[94m Expanding 789744400524075008 corresponding to IT075...[0m
+Number of tweets retrieved: 2
+[94m Expanding 742453338038493185 corresponding to IT075...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 742453338038493185}
+[94m Expanding 720654216314949632 corresponding to IT075...[0m
+Number of tweets retrieved: 3
+[94m Expanding 720496781998604288 corresponding to IT075...[0m
+Number of tweets retrieved: 1
+[94m Expanding 720294399565934594 corresponding to IT075...[0m
+Number of tweets retrieved: 2
+[94m Expanding 808772301818839040 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 806931468593283072 corresponding to IT077...[0m
+Number of tweets retrieved: 2
+[94m Expanding 805310727762444288 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 789074225977962500 corresponding to IT077...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 789074225977962500}
+[94m Expanding 780678644003774464 corresponding to IT077...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 780678644003774464}
+[94m Expanding 779676820186759168 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 779676819372908544 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 779440389619015685 corresponding to IT077...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 779440389619015685}
+[94m Expanding 778650085278162945 corresponding to IT077...[0m
+Number of tweets retrieved: 3
+[94m Expanding 778650080354050048 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 778116530471067648 corresponding to IT077...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 778116530471067648}
+[94m Expanding 778116528780738560 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 777240786261774336 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 767134612287987712 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 766586836131151872 corresponding to IT077...[0m
+Number of tweets retrieved: 2
+[94m Expanding 760085233647493120 corresponding to IT077...[0m
+Number of tweets retrieved: 3
+[94m Expanding 759366496808153088 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 758195025956200449 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 758011930074284032 corresponding to IT077...[0m
+Number of tweets retrieved: 2
+[94m Expanding 757979755769651201 corresponding to IT077...[0m
+Number of tweets retrieved: 2
+[94m Expanding 757961462333702150 corresponding to IT077...[0m
+Number of tweets retrieved: 4
+[94m Expanding 757807047266054144 corresponding to IT077...[0m
+Number of tweets retrieved: 2
+[94m Expanding 757667612247592960 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 757654407249100800 corresponding to IT077...[0m
+Number of tweets retrieved: 8
+[94m Expanding 757574866899988481 corresponding to IT077...[0m
+Number of tweets retrieved: 18
+[94m Expanding 757582324745678848 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 757579391656353793 corresponding to IT077...[0m
+Number of tweets retrieved: 1
+[94m Expanding 758235465623281669 corresponding to IT078...[0m
+Number of tweets retrieved: 2
+[94m Expanding 768056009252151297 corresponding to IT079...[0m
+Number of tweets retrieved: 1
+[94m Expanding 762383800772927488 corresponding to IT079...[0m
+Number of tweets retrieved: 1
+[94m Expanding 762219265349021696 corresponding to IT079...[0m
+Number of tweets retrieved: 2
+[94m Expanding 762207482479517697 corresponding to IT079...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 762207482479517697}
+[94m Expanding 762200504801689600 corresponding to IT079...[0m
+Number of tweets retrieved: 9
+[94m Expanding 769637006150406144 corresponding to IT080...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 769637006150406144}
+[94m Expanding 769603703397548032 corresponding to IT080...[0m
+Number of tweets retrieved: 1
+[94m Expanding 769547528442372100 corresponding to IT080...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 769547528442372100}
+[94m Expanding 775903532138524672 corresponding to IT082...[0m
+Number of tweets retrieved: 1
+[94m Expanding 775252935282491392 corresponding to IT082...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 775252935282491392}
+[94m Expanding 774959182705467392 corresponding to IT082...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 774959182705467392}
+[94m Expanding 774935480529854464 corresponding to IT082...[0m
+Number of tweets retrieved: 1
+[94m Expanding 774552304317927424 corresponding to IT082...[0m
+Number of tweets retrieved: 1
+[94m Expanding 774174103523643394 corresponding to IT082...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 774174103523643394}
+[94m Expanding 830847714560765952 corresponding to IT083...[0m
+Number of tweets retrieved: 2
+[94m Expanding 812607526617264129 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 809710958901940224 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 809710958901940224}
+[94m Expanding 809431637868052480 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 809431637868052480}
+[94m Expanding 809431635879952386 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 809431634957266944 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 800371917786062849 corresponding to IT083...[0m
+Number of tweets retrieved: 3
+[94m Expanding 785436762554368000 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 785233423359053824 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 785233423359053824}
+[94m Expanding 785067313129254912 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 785067313129254912}
+[94m Expanding 784710262280560641 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 784710161399025665 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 784651983248625664 corresponding to IT083...[0m
+Number of tweets retrieved: 21
+[94m Expanding 784629454811389952 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 784629454811389952}
+[94m Expanding 771188468357533696 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 770123940480024580 corresponding to IT083...[0m
+Number of tweets retrieved: 21
+[94m Expanding 766270989571207169 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 765289597077192704 corresponding to IT083...[0m
+Number of tweets retrieved: 16
+[94m Expanding 764954818045542400 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 764954818045542400}
+[94m Expanding 764728302976192512 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 764183627001454592 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 763598366697586690 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 763598366697586690}
+[94m Expanding 763319027162714112 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 762946564880936961 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 762946564880936961}
+[94m Expanding 762634715366952960 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 762634715366952960}
+[94m Expanding 762438276292546564 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 762438275923529728 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 762438275923529728}
+[94m Expanding 755695090669060096 corresponding to IT083...[0m
+Number of tweets retrieved: 8
+[94m Expanding 754333729020076032 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 754333729020076032}
+[94m Expanding 754230519060062208 corresponding to IT083...[0m
+Number of tweets retrieved: 36
+[94m Expanding 753928757526822913 corresponding to IT083...[0m
+Number of tweets retrieved: 1
+[94m Expanding 753914283923091456 corresponding to IT083...[0m
+Number of tweets retrieved: 2
+[94m Expanding 753830294960996356 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 753830294960996356}
+[94m Expanding 753707135930806272 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 753707135930806272}
+[94m Expanding 753610529361592321 corresponding to IT083...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 753610529361592321}
+[94m Expanding 741591315310350336 corresponding to IT084...[0m
+Number of tweets retrieved: 1
+[94m Expanding 730434117221896192 corresponding to IT084...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 730434117221896192}
+[94m Expanding 634108212489273344 corresponding to IT085...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 634108212489273344}
+[94m Expanding 634105791625199616 corresponding to IT085...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 634105791625199616}
+[94m Expanding 634088908763082752 corresponding to IT085...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 634088908763082752}
+[94m Expanding 633985046026842112 corresponding to IT085...[0m
+Number of tweets retrieved: 1
+[94m Expanding 599545528720982016 corresponding to IT086...[0m
+Number of tweets retrieved: 5
+[94m Expanding 953929020051283968 corresponding to IT090...[0m
+Number of tweets retrieved: 1
+[94m Expanding 927621735117131777 corresponding to IT090...[0m
+Number of tweets retrieved: 3
+[94m Expanding 924354845062070272 corresponding to IT090...[0m
+Number of tweets retrieved: 91
+[94m Expanding 914873179914604545 corresponding to IT090...[0m
+Number of tweets retrieved: 1
+[94m Expanding 914435852817793024 corresponding to IT090...[0m
+Number of tweets retrieved: 2
+[94m Expanding 914012032894152704 corresponding to IT090...[0m
+Number of tweets retrieved: 7
+[94m Expanding 913902848059961344 corresponding to IT090...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 913902848059961344}
+[94m Expanding 884335417713188864 corresponding to IT090...[0m
+Number of tweets retrieved: 1
+[94m Expanding 882684982539550725 corresponding to IT090...[0m
+Number of tweets retrieved: 1
+[94m Expanding 850333590042947584 corresponding to IT090...[0m
+Number of tweets retrieved: 3
+[94m Expanding 836824398699053056 corresponding to IT090...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 836824398699053056}
+[94m Expanding 637592701123338241 corresponding to IT090...[0m
+Number of tweets retrieved: 4
+[94m Expanding 637567473018126336 corresponding to IT090...[0m
+Number of tweets retrieved: 7
+[94m Expanding 637393501043470336 corresponding to IT090...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 637393501043470336}
+[94m Expanding 622778240038498304 corresponding to IT090...[0m
+Number of tweets retrieved: 3
+[94m Expanding 622049392233742336 corresponding to IT090...[0m
+Number of tweets retrieved: 1
+[94m Expanding 621257747133296640 corresponding to IT090...[0m
+Number of tweets retrieved: 2
+[94m Expanding 621163717342961664 corresponding to IT090...[0m
+Number of tweets retrieved: 1
+[94m Expanding 620999702369206272 corresponding to IT090...[0m
+Number of tweets retrieved: 3
+[94m Expanding 620995472568811521 corresponding to IT090...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 620995472568811521}
+[94m Expanding 620924710017212416 corresponding to IT090...[0m
+Number of tweets retrieved: 3
+[94m Expanding 620963482045939712 corresponding to IT090...[0m
+Number of tweets retrieved: 2
+[94m Expanding 620754904261332992 corresponding to IT090...[0m
+No data was retrieved with the following query: {'lang': 'it', 'date_since': '2006-03-21', 'max_tweets': 100000, 'max_results': 500, 'conversation_id': 620754904261332992}
+[94m Expanding 621186504954675200 corresponding to IT092...[0m
+Number of tweets retrieved: 6
+Finished...

@@ -3,12 +3,7 @@ import shutil
 import pandas as pd
 
 from ast import literal_eval
-
-
-DATA_PATH = './data'
-DOWNLOAD_FILE = 'downloaded_tweets.csv'
-CLEAN_FILE = 'kept_tweets.csv'
-ANNOTATE_FILE = 'labeled_tweets.csv'
+from utils.constants import *
 
 
 def read_data(stage='clean'):
