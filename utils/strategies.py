@@ -58,7 +58,7 @@ def run_title_strategy(title, date, source, rh_id):
     else:
         header = True
 
-    searcher = Searcher(MAX_TWEETS)
+    searcher = Searcher(max_tweets=MAX_TWEETS)
     searcher.run_query(query_params, filename, header, rh_id)
 
     # Wait for the searcher to finish before going to another query
@@ -77,7 +77,7 @@ def run_url_tweets_strategy(url, fact_checker, rh_id):
     filename = f'{fact_checker}_tweets_embed.csv'
     # for i, (q, ix) in enumerate(zip(embed_tweets, embed_tweet_ids)):
     #     print(f'\t{i} --> {q} : {ix}')
-    Searcher(MAX_TWEETS).tweet_lookup(embed_tweet_ids, filename=filename, rh_id=rh_id)
+    Searcher(max_tweets=MAX_TWEETS).tweet_lookup(embed_tweet_ids, filename=filename, rh_id=rh_id)
     # multiple_search(embed_tweets, query_params, rh_id, filename)
 
 

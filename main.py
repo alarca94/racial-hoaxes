@@ -5,13 +5,11 @@ import re
 import pandas as pd
 import dateutil.parser
 
-from utils import tweet_lookup
 from utils.constants import *
 from utils.inout import read_tweets
 from utils.preprocess import *
 from utils.search import Searcher
 from utils.strategies import *
-from nltk.stem import SnowballStemmer
 
 
 def read_data():
@@ -181,9 +179,9 @@ def test():
 if __name__ == '__main__':
     # run_gui.run()
     # run_query()
-    # run_automatic_downloader()
+    run_automatic_downloader()
     # visualize_data()
-    clean_data()
+    # clean_data()
     # normalize_ids()
     # tweets_search()
     # conversation_search()
