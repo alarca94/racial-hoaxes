@@ -21,6 +21,11 @@ def read_data(stage='clean'):
     return pd.read_csv(file_path, encoding='utf-8', converters=converters)
 
 
+def read_tweets(filename):
+    dtypes = {c: str for c in ['conversation_id', 'tweet_id', 'in_reply_to_tweet_id', 'author_id', 'date']}
+    return pd.read_csv(os.path.join(DATA_PATH, filename), dtype=dtypes, delimiter=',')
+
+
 class Printer:
     def __init__(self, status_bar):
         self.status_bar = status_bar

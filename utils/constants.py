@@ -7,6 +7,7 @@ AVAILABLE_LANGS = {'Spanish': 'es', 'English': 'en', 'French': 'fr', 'Arabic': '
                    'English UK': 'en-gb'}
 
 DATA_PATH = './data'
+QUERY_PATH = './query_files'
 DOWNLOAD_FILE = 'downloaded_tweets.csv'
 CLEAN_FILE = 'kept_tweets.csv'
 ANNOTATE_FILE = 'labeled_tweets.csv'
@@ -16,4 +17,9 @@ SOURCE_LANG = {
     'butac': 'it',
     'newtral': 'es',
     'migracion.maldita': 'es'
+}
+
+LANG_MAPPER = {
+    'es': 'spanish',
+    'it': 'italian'
 }
