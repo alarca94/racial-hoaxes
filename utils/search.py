@@ -3,6 +3,7 @@ import functools
 import json
 import re
 import os
+import time
 import threading
 
 import dateutil.parser
@@ -37,7 +38,7 @@ class PeriodicTimer(object):
 
 
 class Searcher:
-    def __init__(self, out_widget=None):
+    def __init__(self, out_widget=None, max_tweets=1000000):
         self.search_all_endpoint = "https://api.twitter.com/2/tweets/search/all"
         self.tweet_lookup_endpoint = "https://api.twitter.com/2/tweets"
         self.search_url = self.search_all_endpoint
@@ -49,7 +50,7 @@ class Searcher:
                         'retweet_count', 'urls', 'place_name', 'country', 'place_type']
         self.headers = ''
         self.params = {}
-        self.max_tweets = 1000000
+        self.max_tweets = max_tweets
         self.curr_tweets = 0
         # self.timer = QTimer()
         self.timer = PeriodicTimer(self.sleep_time, self._continure_query)
@@ -161,7 +162,7 @@ class Searcher:
                     print(msg)
 
                 # Keep saving the dataset in the file per tweets request
-                tweet_df = pd.DataFrame(tweet_data, columns=self.columns)
+                tweet_df = pd.DataFrame(tweet_data, columns=self.columns, dtype=str).fillna('')
                 if self.rh_id is not None:
                     tweet_df['rh_id'] = self.rh_id
                 tweet_df.to_csv(self.save_to_file, mode='a', index=False, header=False, quoting=csv.QUOTE_ALL)
@@ -171,13 +172,37 @@ class Searcher:
             self.timer.stop()
             self.is_running = False
 
-    def tweet_lookup(self, query_params, filename=None, initial_header=True, rh_id=None):
+    def tweet_lookup(self, tweet_ids, filename=None, initial_header=True, rh_id=None):
         self.search_url = self.tweet_lookup_endpoint
-        return self.run_query(query_params, filename, initial_header, rh_id)
+        max_tweets_per_request = 70
+        if os.path.isfile(os.path.join(DATA_PATH, filename)):
+            initial_header = False
+        while len(tweet_ids) > max_tweets_per_request:
+            self.run_query(tweet_ids, filename, initial_header, rh_id)
+            initial_header = False
+            tweet_ids = tweet_ids[max_tweets_per_request:]
+            while self.is_running:
+                pass
+            time.sleep(self.sleep_time)
+        return self.run_query(tweet_ids, filename, initial_header, rh_id)
 
     def search_all(self, query_params, filename=None, initial_header=True, rh_id=None):
         self.search_url = self.search_all_endpoint
+        if os.path.isfile(os.path.join(DATA_PATH, filename)):
+            initial_header = False
         return self.run_query(query_params, filename, initial_header, rh_id)
+
+    @staticmethod
+    def _build_common_params():
+        tweet_fields = ['attachments', 'author_id', 'conversation_id', 'created_at', 'entities',
+                        'id', 'in_reply_to_user_id', 'lang', 'possibly_sensitive', 'public_metrics',
+                        'referenced_tweets', 'source', 'text', 'withheld']
+
+        params = {'tweet.fields': ','.join(tweet_fields),
+                  'media.fields': ','.join(['type', 'preview_image_url']),
+                  'expansions': 'geo.place_id',
+                  'place.fields': ','.join(['country', 'country_code', 'full_name', 'place_type'])}
+        return params
 
     def run_query(self, query_params, filename=None, initial_header=True, rh_id=None):
         self.is_running = True
@@ -190,27 +215,21 @@ class Searcher:
 
         self.save_to_file = os.path.join(DATA_PATH, self.save_to_file)
 
-        q = self._create_query(query_params)
-
-        tweet_fields = ['attachments', 'author_id', 'conversation_id', 'created_at', 'entities',
-                        'id', 'in_reply_to_user_id', 'lang', 'possibly_sensitive', 'public_metrics',
-                        'referenced_tweets', 'source', 'text', 'withheld']
-
         self.headers = self._create_headers()
+        self.params = self._build_common_params()
+        if isinstance(query_params, list):
+            self.params['ids'] = ','.join(query_params)
+        else:
+            q = self._create_query(query_params)
+            self.params['query'] = q
+            self.params['max_results'] = min(500, self.max_tweets)
 
-        self.params = {'query': q,
-                       'tweet.fields': ','.join(tweet_fields),
-                       'media.fields': ','.join(['type', 'preview_image_url']),
-                       'expansions': 'geo.place_id',
-                       'place.fields': ','.join(['country', 'country_code', 'full_name', 'place_type']),
-                       'max_results': query_params['max_results']}
-
-        if query_params.get('date_to', False):
-            date_to = dateutil.parser.isoparse(query_params['date_to'])
-            self.params['end_time'] = date_to.isoformat('T') + 'Z'
-        if query_params.get('date_since', False):
-            date_since = dateutil.parser.isoparse(query_params['date_since'])
-            self.params['start_time'] = date_since.isoformat('T') + 'Z'
+            if query_params.get('date_to', False):
+                date_to = dateutil.parser.isoparse(query_params['date_to'])
+                self.params['end_time'] = date_to.isoformat('T') + 'Z'
+            if query_params.get('date_since', False):
+                date_since = dateutil.parser.isoparse(query_params['date_since'])
+                self.params['start_time'] = date_since.isoformat('T') + 'Z'
 
         status_code, self.json_response = self._connect_to_endpoint(self.headers, self.params)
         if status_code != 200:
@@ -220,7 +239,6 @@ class Searcher:
         data = self.json_response.get('data', [])
         places = pd.DataFrame(self.json_response.get('includes', {}).get('places', []))
 
-        self.max_tweets = query_params['max_tweets']
         self.curr_tweets = 0
 
         if data:
@@ -233,7 +251,7 @@ class Searcher:
             self.curr_tweets += len(tweet_data)
 
             # Save initial tweets request
-            tweet_df = pd.DataFrame(tweet_data, columns=self.columns)
+            tweet_df = pd.DataFrame(tweet_data, columns=self.columns, dtype=str).fillna('')
             if self.rh_id is not None:
                 tweet_df['rh_id'] = self.rh_id
             tweet_df.to_csv(self.save_to_file, mode='a', index=False, header=initial_header, quoting=csv.QUOTE_ALL)
