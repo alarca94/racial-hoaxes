@@ -21,6 +21,7 @@ MAX_TWEETS = 100000
 
 
 def clean_duplicates(data):
+    initial_size = data.shape[0]
     data.drop_duplicates(subset='tweet_id', keep='first', inplace=True)
     data.reset_index(drop=True, inplace=True)
     data['clean_text'] = basic_text_normalization(data.text, drop=True)
@@ -41,7 +42,10 @@ def clean_duplicates(data):
     data.drop(del_ixs, axis=0, inplace=True)
 
     data.sort_values(by=['conversation_id', 'date'], ascending=True, na_position='first', inplace=True)
-    data.drop('clean_text', axis=1, inplace=True)
+    data.drop(['clean_text', 'my_reply_count'], axis=1, inplace=True)
+    data.reset_index(drop=False, inplace=True)
+    data = data[['author_id'] + [c for c in data.columns if c != 'author_id']]
+    print(f'The number of tweets after the deduplication step went from {initial_size} to {data.shape[0]}')
     return data
 
 
@@ -73,11 +77,15 @@ def run_url_tweets_strategy(url, fact_checker, rh_id):
     soup = BeautifulSoup(html_content, "lxml")
     links = soup.find_all("blockquote", attrs={"class": "twitter-tweet"})
     # embed_tweets = [re.sub('\s+pic\.twitter\..*\s?', ' ', item.find('p').text) for item in links]
-    embed_tweet_ids = [int(re.sub('.*/status/(.*)\?.*', r'\g<1>', item.find_all('a')[-1]['href'])) for item in links]
-    filename = f'{fact_checker}_tweets_embed.csv'
+    embed_tweet_ids = [re.sub('.*/status/(.*)\?.*', r'\g<1>', item.find_all('a')[-1]['href']) for item in links]
+    filename = f'{fact_checker}_tweets.csv'
     # for i, (q, ix) in enumerate(zip(embed_tweets, embed_tweet_ids)):
     #     print(f'\t{i} --> {q} : {ix}')
-    Searcher(max_tweets=MAX_TWEETS).tweet_lookup(embed_tweet_ids, filename=filename, rh_id=rh_id)
+    if embed_tweet_ids:
+        print(f'\t+++ Searching for {len(embed_tweet_ids)} embedded tweet ids...')
+        Searcher(max_tweets=MAX_TWEETS).tweet_lookup(embed_tweet_ids, filename=filename, rh_id=rh_id)
+    else:
+        print('\t+++ No embedded tweets were found...')
     # multiple_search(embed_tweets, query_params, rh_id, filename)
 
 
@@ -97,7 +105,7 @@ def run_url_quotes_strategy(url, date, source, rh_id):
                     'date_to': '',  # min(f'{date}-12-31', time.strftime('%Y-%m-%d')),
                     'lang': SOURCE_LANG[source],
                     'max_tweets': MAX_TWEETS}
-    filename = f'{source}_tweets_quotes.csv'
+    filename = f'{source}_tweets.csv'
     # for i, q in enumerate(quotations):
     #     print(f'\t{i} --> {q}')
     multiple_search(quotations, query_params, rh_id, filename)
@@ -124,7 +132,7 @@ def expand_conversations(fact_checker):
     tweets = read_tweets(filename)
 
     # Save backup file
-    tweets.to_csv(os.path.join(DATA_PATH, filename[:-4] + 'unexpanded.csv'),
+    tweets.to_csv(os.path.join(DATA_PATH, filename[:-4] + '_unexpanded.csv'),
                   mode='w', index=False, quoting=csv.QUOTE_ALL)
 
     # Expand only conversation_ids of tweets either having replies (posterior thread) or being replies (previous thread)
@@ -140,11 +148,14 @@ def expand_conversations(fact_checker):
     searcher = Searcher()
     for _, row in expand_ids.iterrows():
         print(f'\033[94m Expanding {row.conversation_id} corresponding to {row.rh_id}...\033[0m')
-        query_params['conversation_id'] = row.conversation_id
-        searcher.run_query(query_params, filename, initial_header=False, rh_id=row.rh_id)
-        while searcher.is_running:
-            pass
-        time.sleep(searcher.sleep_time)
+        if row.conversation_id in EXCLUDE_CONV_IDS.get(fact_checker, []):
+            print(f'\t+++ This conversation id has been manually excluded from the expansion')
+        else:
+            query_params['conversation_id'] = row.conversation_id
+            searcher.run_query(query_params, filename, initial_header=False, rh_id=row.rh_id)
+            while searcher.is_running:
+                pass
+            time.sleep(searcher.sleep_time)
 
     # Deduplicate retrieved tweets by tweet_id
     tweets = read_tweets(filename)
@@ -153,11 +164,13 @@ def expand_conversations(fact_checker):
     # Apparently, Twitter API search by conversation_id does not retrieve the first tweet in multiple cases
     lookup_ids = tweets.groupby('conversation_id').apply(lambda s: not any(pd.isna(s.in_reply_to_tweet_id)))
     lookup_ids = lookup_ids[lookup_ids].index.tolist()
+    print(f'Looking for {len(lookup_ids)} initial comments to add to the {tweets.shape[0]} existing tweets...')
     searcher.tweet_lookup(lookup_ids, filename)
     while searcher.is_running:
         pass
 
     # Deduplicate tweets based on clean text (without user tags or URLs)
+    tweets = read_tweets(filename)
     tweets = clean_duplicates(tweets)
 
     # Save to file with the new data
@@ -183,10 +196,11 @@ def force_target_in_text(rh_data, fact_checker):
     tw_data.to_csv(os.path.join(DATA_PATH, tw_filename[:-4] + '_unfiltered.csv'),
                    mode='w', index=False, header=True, quoting=csv.QUOTE_ALL)
 
-    tw_data = clean_duplicates(tw_data)
+    tw_data.drop_duplicates(subset=['tweet_id'], inplace=True)
 
     # Filter racial hoaxes to those of the current fact checker
     fc_rh_data = rh_data[rh_data.Source.str.contains(fact_checker)]
+    fc_rh_data.Source = fc_rh_data.Source.str.strip()
 
     # Get all targets per URL (possibly containing a set of hoaxes) for the posterior filtering
     col_of_interest = ['RH ID', 'Object of discourse (literal)']
@@ -198,8 +212,13 @@ def force_target_in_text(rh_data, fact_checker):
         # Find tweets within the subset that contain the target group
         keep_ixs.extend(subset[filter_target_groups(g[1])].index.tolist())
 
-    print(f'Out of {tw_data.shape[0]} tweets, we will keep {len(keep_ixs)}')
+    print(f'Out of {tw_data.shape[0]} tweets, we will keep {len(keep_ixs)} due to target-in-text constraint')
+
+    tw_data = tw_data.loc[keep_ixs]
+    rm_cond = np.isin(tw_data.tweet_id, EXCLUDE_TWEET_IDS[fact_checker])
+    tw_data = tw_data[~rm_cond]
+
+    print(f'Furthermore, {sum(rm_cond)} tweets have been removed according to manual check')
 
     # Save new data to main file
-    tw_data.loc[keep_ixs].to_csv(os.path.join(DATA_PATH, tw_filename),
-                                 index=False, mode='w', header=True, quoting=csv.QUOTE_ALL)
+    tw_data.to_csv(os.path.join(DATA_PATH, tw_filename), index=False, mode='w', header=True, quoting=csv.QUOTE_ALL)

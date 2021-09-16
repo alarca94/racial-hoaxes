@@ -72,6 +72,13 @@ class Searcher:
         headers = {"Authorization": "Bearer {}".format(keys['bearer_token'])}
         return headers
 
+    @staticmethod
+    def _set_rhid(df, rh_id):
+        if rh_id is not None:
+            df['rh_id'] = rh_id
+        else:
+            df['rh_id'] = ''
+
     def _connect_to_endpoint(self, headers, params):
         try:
             response = requests.request("GET", self.search_url, headers=headers, params=params)
@@ -162,9 +169,8 @@ class Searcher:
                     print(msg)
 
                 # Keep saving the dataset in the file per tweets request
-                tweet_df = pd.DataFrame(tweet_data, columns=self.columns, dtype=str).fillna('')
-                if self.rh_id is not None:
-                    tweet_df['rh_id'] = self.rh_id
+                tweet_df = pd.DataFrame(tweet_data, columns=self.columns, dtype='str').fillna('')
+                self._set_rhid(tweet_df, self.rh_id)
                 tweet_df.to_csv(self.save_to_file, mode='a', index=False, header=False, quoting=csv.QUOTE_ALL)
 
                 return True
@@ -178,7 +184,7 @@ class Searcher:
         if os.path.isfile(os.path.join(DATA_PATH, filename)):
             initial_header = False
         while len(tweet_ids) > max_tweets_per_request:
-            self.run_query(tweet_ids, filename, initial_header, rh_id)
+            self.run_query(tweet_ids[:max_tweets_per_request], filename, initial_header, rh_id)
             initial_header = False
             tweet_ids = tweet_ids[max_tweets_per_request:]
             while self.is_running:
@@ -251,9 +257,8 @@ class Searcher:
             self.curr_tweets += len(tweet_data)
 
             # Save initial tweets request
-            tweet_df = pd.DataFrame(tweet_data, columns=self.columns, dtype=str).fillna('')
-            if self.rh_id is not None:
-                tweet_df['rh_id'] = self.rh_id
+            tweet_df = pd.DataFrame(tweet_data, columns=self.columns, dtype='str').fillna('')
+            self._set_rhid(tweet_df, self.rh_id)
             tweet_df.to_csv(self.save_to_file, mode='a', index=False, header=initial_header, quoting=csv.QUOTE_ALL)
 
             msg = f'Number of tweets retrieved: {self.curr_tweets}'  # \tLast Date: {tweet_data[-1][2]}'

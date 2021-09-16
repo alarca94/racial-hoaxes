@@ -28,11 +28,8 @@ def read_data():
 
 
 def visualize_data():
-    import os
-
-    data_path = './data'
-    file = 'migracion.maldita_tweets_2.csv'
-    data = pd.read_csv(os.path.join(data_path, file))
+    file = 'newtral_tweets_unexpanded.csv'
+    data = read_tweets(file)
     maybe_data = np.isin(data.conversation_id, data[data['in/out of topic'] == 'maybe'].conversation_id)
     temp = data[maybe_data]
     # print(temp.groupby('conversation_id').size())
@@ -119,12 +116,12 @@ def run_automatic_downloader():
                     print('Searching by quoted text...')
                     run_url_quotes_strategy(fact_check_url, int(fact_check_date[-4:]), fact_checker, rh_id)
 
-    noisy_sources = ['migracion.maldita']
+    noisy_sources = ['migracion.maldita']  # 'migracion.maldita'
     for fact_checker in noisy_sources:
         print(f'De-noising {fact_checker} data...')
         force_target_in_text(racial_hoaxes, fact_checker)
 
-    expand_from_sources = ['bufale', 'newtral', 'migracion.maldita']
+    expand_from_sources = ['bufale', 'newtral', 'migracion.maldita']  # 'bufale', 'newtral', 'migracion.maldita'
     for fact_checker in expand_from_sources:
         expand_conversations(fact_checker)
 
@@ -142,7 +139,7 @@ def normalize_ids():
 
 
 def tweets_search():
-    Searcher(max_tweets=10).tweet_lookup(['1384644393752203274', '1384551983391166467'], 'test.csv')
+    Searcher(max_tweets=10).tweet_lookup(['929343192272637952'], 'test.csv')
 
 
 def conversation_search():
@@ -153,7 +150,7 @@ def conversation_search():
     filename = 'conversation_test.csv'
     if os.path.isfile(os.path.join(DATA_PATH, filename)):
         os.remove(os.path.join(DATA_PATH, filename))
-    conversation_ids = [1384566303789359111]
+    conversation_ids = [929343192272637952]
     searcher = Searcher()
     for id in conversation_ids:
         print(f'\033[94m Searching conversation {id}...\033[0m')
@@ -164,16 +161,27 @@ def conversation_search():
         time.sleep(searcher.sleep_time)
 
 
-def test():
-    def missing_first(s):
-        is_first = s.in_reply_to_tweet_id
-        is_first = pd.isna(is_first) | (is_first == -1)
-        return not any(is_first)
-    filename = 'migracion.maldita_tweets.csv'
-    data = read_tweets(filename)
-    lookup_ids = data.groupby('conversation_id').apply(lambda s: not any(pd.isna(s.in_reply_to_tweet_id)))
+def first_tweets_retrieval(filename):
+    searcher = Searcher(max_tweets=MAX_TWEETS)
+    tweets = read_tweets(filename)
+    tweets.drop_duplicates(subset=['tweet_id'], inplace=True)
+
+    # Apparently, Twitter API search by conversation_id does not retrieve the first tweet in multiple cases
+    lookup_ids = tweets.groupby('conversation_id').apply(lambda s: not any(pd.isna(s.in_reply_to_tweet_id)))
     lookup_ids = lookup_ids[lookup_ids].index.tolist()
-    print(f'Looking for first tweet of {len(lookup_ids)} conversations out of {data.conversation_id.nunique()}...')
+    print(f'Looking for {len(lookup_ids)} initial comments to add to the {tweets.shape[0]} existing tweets...')
+    searcher.tweet_lookup(lookup_ids, filename)
+    while searcher.is_running:
+        pass
+
+
+def test():
+    filename = 'newtral_tweets.csv'
+    tweets = read_tweets(filename)
+    tweets = clean_duplicates(tweets)
+
+    # Save to file with the new data
+    tweets.to_csv(os.path.join(DATA_PATH, filename), mode='w', index=False, quoting=csv.QUOTE_ALL)
 
 
 if __name__ == '__main__':
@@ -185,6 +193,7 @@ if __name__ == '__main__':
     # normalize_ids()
     # tweets_search()
     # conversation_search()
+    # first_tweets_retrieval('newtral_tweets.csv')
     # test()
 
     print('Finished...')
