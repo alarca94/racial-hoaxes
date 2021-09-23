@@ -49,8 +49,14 @@ def clean_duplicates(data):
     return data
 
 
-def run_title_strategy(title, date, source, rh_id):
+def run_title_strategy(title, date, source, rh_id, keep_stopwords=True):
     filename = f'{source}_tweets.csv'
+
+    if not keep_stopwords:
+        title = ' '.join([w for w in nltk.word_tokenize(title)
+                          if w not in stopwords.words(LANG_MAPPER[SOURCE_LANG[source]])])
+        title = re.sub('\s+', ' ', re.sub('[^\w\s]', '', title))
+
     query_params = {'keys': title,
                     'date_since': f'{date-5}-01-01',
                     'date_to': '',  # min(f'{date}-12-31', time.strftime('%Y-%m-%d')),
@@ -164,14 +170,25 @@ def expand_conversations(fact_checker):
     # Apparently, Twitter API search by conversation_id does not retrieve the first tweet in multiple cases
     lookup_ids = tweets.groupby('conversation_id').apply(lambda s: not any(pd.isna(s.in_reply_to_tweet_id)))
     lookup_ids = lookup_ids[lookup_ids].index.tolist()
-    print(f'Looking for {len(lookup_ids)} initial comments to add to the {tweets.shape[0]} existing tweets...')
-    searcher.tweet_lookup(lookup_ids, filename)
-    while searcher.is_running:
-        pass
+
+    if lookup_ids:
+        print(f'\033[94m Looking for {len(lookup_ids)} initial comments to add to the {tweets.shape[0]} '
+              f'existing tweets...\033[0m')
+        searcher.tweet_lookup(lookup_ids, filename)
+        while searcher.is_running:
+            pass
+    else:
+        print(f'\033[94m All conversations have their initial comments...\033[0m')
 
     # Deduplicate tweets based on clean text (without user tags or URLs)
     tweets = read_tweets(filename)
     tweets = clean_duplicates(tweets)
+
+    # Populate Racial Hoax ID for the starting tweets previously retrieved
+    unexpanded_data = read_tweets(f'{fact_checker}_tweets_unexpanded.csv')
+    mapper = unexpanded_data.drop_duplicates(subset='conversation_id')[['conversation_id', 'rh_id']]
+    mapper = mapper.set_index('conversation_id').rh_id
+    tweets.rh_id = tweets.conversation_id.map(mapper)
 
     # Save to file with the new data
     tweets.to_csv(os.path.join(DATA_PATH, filename), mode='w', index=False, quoting=csv.QUOTE_ALL)

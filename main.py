@@ -28,8 +28,16 @@ def read_data():
 
 
 def visualize_data():
-    file = 'newtral_tweets_unexpanded.csv'
+    file = 'migracion.maldita_tweets.csv'
     data = read_tweets(file)
+
+    conv_size = data.groupby('conversation_id').size()
+    unexpanded_data = read_tweets('migracion.maldita_tweets_unexpanded.csv')
+    mapper = unexpanded_data.drop_duplicates(subset='conversation_id')[['conversation_id', 'rh_id']]
+    mapper = mapper.set_index('conversation_id').rh_id
+    data.rh_id = data.conversation_id.map(mapper)
+    data.to_csv(os.path.join(DATA_PATH, file), mode='w', index=False, quoting=csv.QUOTE_ALL)
+    exit()
     maybe_data = np.isin(data.conversation_id, data[data['in/out of topic'] == 'maybe'].conversation_id)
     temp = data[maybe_data]
     # print(temp.groupby('conversation_id').size())
@@ -92,7 +100,7 @@ def run_query():
 
 
 def run_automatic_downloader():
-    download_from_sources = ['bufale', 'newtral', 'migracion.maldita']  # ['bufale', 'butac', 'newtral', 'migracion.maldita']
+    download_from_sources = ['butac']  # ['bufale', 'butac', 'newtral', 'migracion.maldita']
     racial_hoaxes = pd.read_csv('./query_files/full_version.csv')
     visited_urls = []
     for ix, row in racial_hoaxes.iterrows():
@@ -110,18 +118,20 @@ def run_automatic_downloader():
 
                 if fact_checker == 'bufale':
                     run_title_strategy(fact_title, int(fact_check_date), fact_checker, rh_id)
+                elif fact_checker == 'butac':
+                    run_title_strategy(fact_title, int(fact_check_date), fact_checker, rh_id, keep_stopwords=False)
                 elif fact_checker in ['newtral', 'migracion.maldita']:  # 'newtral', 'migracion.maldita'
                     print('Searching by embedded tweets...')
                     run_url_tweets_strategy(fact_check_url, fact_checker, rh_id)
                     print('Searching by quoted text...')
                     run_url_quotes_strategy(fact_check_url, int(fact_check_date[-4:]), fact_checker, rh_id)
 
-    noisy_sources = ['migracion.maldita']  # 'migracion.maldita'
+    noisy_sources = []  # 'migracion.maldita'
     for fact_checker in noisy_sources:
         print(f'De-noising {fact_checker} data...')
         force_target_in_text(racial_hoaxes, fact_checker)
 
-    expand_from_sources = ['bufale', 'newtral', 'migracion.maldita']  # 'bufale', 'newtral', 'migracion.maldita'
+    expand_from_sources = ['butac']  # 'bufale', 'butac', 'newtral', 'migracion.maldita'
     for fact_checker in expand_from_sources:
         expand_conversations(fact_checker)
 
