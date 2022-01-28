@@ -50,6 +50,10 @@ def clean_duplicates(data):
 
 
 def run_title_strategy(title, date, source, rh_id, keep_stopwords=True):
+    '''
+    Method to retrieve those tweets that (partially in case stopwords are removed) contain the racial hoax title in
+    their text. Filter on date (within 5 years prior to the racial hoax verification date) and language is performed.
+    '''
     filename = f'{source}_tweets.csv'
 
     if not keep_stopwords:
@@ -79,6 +83,10 @@ def run_title_strategy(title, date, source, rh_id, keep_stopwords=True):
 
 
 def run_url_tweets_strategy(url, fact_checker, rh_id):
+    '''
+    Some racial hoax articles contain several embedded tweets. This method extracts those tweet identifiers and
+    performs a tweet lookup using Twitter API.
+    '''
     html_content = requests.get(url).text
     soup = BeautifulSoup(html_content, "lxml")
     links = soup.find_all("blockquote", attrs={"class": "twitter-tweet"})
@@ -194,24 +202,17 @@ def expand_conversations(fact_checker):
     tweets.to_csv(os.path.join(DATA_PATH, filename), mode='w', index=False, quoting=csv.QUOTE_ALL)
 
 
-def force_target_in_text(rh_data, fact_checker):
+def target_in_text(tw_data, rh_data, fact_checker):
     def prepare(l):
         return list(set([sub_t for t in l for sub_t in re.split('\s*,\s*', t)]))
 
     def filter_target_groups(g):
-        sub_g = [np.bitwise_and.reduce([subset.text.str.lower().str.contains(stemmer.stem(w.lower()))
+        sub_g = [np.bitwise_and.reduce([subset.text.str.lower().str.contains(stemmer.stem(w.lower())).values
                                         for w in re.split('\s+', g_i)])
                  for g_i in g]
         return np.bitwise_or.reduce(sub_g)
 
     stemmer = SnowballStemmer(LANG_MAPPER[SOURCE_LANG[fact_checker]])
-
-    tw_filename = fact_checker + '_tweets.csv'
-    tw_data = read_tweets(tw_filename)
-
-    # Save old data to backup file
-    tw_data.to_csv(os.path.join(DATA_PATH, tw_filename[:-4] + '_unfiltered.csv'),
-                   mode='w', index=False, header=True, quoting=csv.QUOTE_ALL)
 
     tw_data.drop_duplicates(subset=['tweet_id'], inplace=True)
 
@@ -229,6 +230,19 @@ def force_target_in_text(rh_data, fact_checker):
         # Find tweets within the subset that contain the target group
         keep_ixs.extend(subset[filter_target_groups(g[1])].index.tolist())
 
+    return keep_ixs
+
+
+def force_target_in_text(rh_data, fact_checker):
+    tw_filename = fact_checker + '_tweets.csv'
+    tw_data = read_tweets(tw_filename)
+
+    # Save old data to backup file
+    tw_data.to_csv(os.path.join(DATA_PATH, tw_filename[:-4] + '_unfiltered.csv'),
+                   mode='w', index=False, header=True, quoting=csv.QUOTE_ALL)
+
+    keep_ixs = target_in_text(tw_data, rh_data, fact_checker)
+
     print(f'Out of {tw_data.shape[0]} tweets, we will keep {len(keep_ixs)} due to target-in-text constraint')
 
     tw_data = tw_data.loc[keep_ixs]
@@ -236,6 +250,31 @@ def force_target_in_text(rh_data, fact_checker):
     tw_data = tw_data[~rm_cond]
 
     print(f'Furthermore, {sum(rm_cond)} tweets have been removed according to manual check')
+
+    # Save new data to main file
+    tw_data.to_csv(os.path.join(DATA_PATH, tw_filename), index=False, mode='w', header=True, quoting=csv.QUOTE_ALL)
+
+
+def reduce_conversations(rh_data, fact_checker):
+    tw_filename = fact_checker + '_tweets.csv'
+    tw_data = read_tweets(tw_filename)
+
+    # Save old data to backup file
+    tw_data.to_csv(os.path.join(DATA_PATH, tw_filename[:-4] + '_prereduce.csv'),
+                   mode='w', index=False, header=True, quoting=csv.QUOTE_ALL)
+
+    target_keep_ixs = target_in_text(tw_data, rh_data, fact_checker)
+
+    # Add to keep index all those tweets where in_reply_to_tweet_id is in target_keep_ixs' tweet_ids
+    post_keep_ixs = tw_data[tw_data.in_reply_to_tweet_id.isin(tw_data.loc[target_keep_ixs].tweet_id)].index.tolist()
+
+    # Add to keep index all those tweets which tweet_id is in target_keep_ixs' in_reply_to_tweet_id
+    prev_keep_ixs = tw_data[tw_data.tweet_id.isin(tw_data.loc[target_keep_ixs].in_reply_to_tweet_id)].index.tolist()
+
+    keep_ixs = set(target_keep_ixs).union(set(post_keep_ixs), set(prev_keep_ixs))
+    print(f'Out of {tw_data.shape[0]} tweets, we will keep {len(keep_ixs)} due to target-in-text plus neighbours...')
+    tw_data = tw_data.loc[keep_ixs]
+    tw_data.sort_values(by=['conversation_id', 'date'], ascending=True, na_position='first', inplace=True)
 
     # Save new data to main file
     tw_data.to_csv(os.path.join(DATA_PATH, tw_filename), index=False, mode='w', header=True, quoting=csv.QUOTE_ALL)

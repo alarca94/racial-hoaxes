@@ -52,8 +52,9 @@ class Searcher:
         self.params = {}
         self.max_tweets = max_tweets
         self.curr_tweets = 0
-        # self.timer = QTimer()
         self.timer = PeriodicTimer(self.sleep_time, self._continure_query)
+        # When running the GUI, QTimer must be used instead of the PeriodicTimer
+        # self.timer = QTimer()
         # self.timer.timeout.connect(self._continure_query)
         # self.timer.setInterval(self.sleep_time * 1000)
         self.save_to_file = None
@@ -138,6 +139,10 @@ class Searcher:
         return q
 
     def _continure_query(self):
+        '''
+        Function to continue the query given the next_token field obtained from the previous request to Twitter API.
+        It is necessary given that the maximum number of tweets that can be retrieved from a single query is 500.
+        '''
         if 'next_token' in self.json_response.get('meta', {}).keys() and self.curr_tweets < self.max_tweets and \
                 self.enabled:
             # Repeat the request with the same parameters but adding the "next_token" keyword with the value of the
@@ -179,6 +184,14 @@ class Searcher:
             self.is_running = False
 
     def tweet_lookup(self, tweet_ids, filename=None, initial_header=True, rh_id=None):
+        '''
+        Function to retrieve specific tweets by their identifiers.
+
+        :param tweet_ids: List of tweet identifiers
+        :param filename: name of the file to save the results
+        :param initial_header: whether the column names need to be written in the file or they are already written
+        :param rh_id: racial hoax identifier
+        '''
         self.search_url = self.tweet_lookup_endpoint
         max_tweets_per_request = 70
         if os.path.isfile(os.path.join(DATA_PATH, filename)):
@@ -200,6 +213,9 @@ class Searcher:
 
     @staticmethod
     def _build_common_params():
+        '''
+        This static method returns the common request parameters that are common to all queries.
+        '''
         tweet_fields = ['attachments', 'author_id', 'conversation_id', 'created_at', 'entities',
                         'id', 'in_reply_to_user_id', 'lang', 'possibly_sensitive', 'public_metrics',
                         'referenced_tweets', 'source', 'text', 'withheld']
