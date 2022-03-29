@@ -1,5 +1,4 @@
 import run_gui
-import run_twitter_api
 import json
 import re
 import pandas as pd
@@ -125,7 +124,7 @@ def tweets_search():
     '''
     In case the tweet_id is known a priori, this functions implements the corresponding tweets lookup.
     '''
-    Searcher(max_tweets=10).tweet_lookup(['929343192272637952'], 'test.csv')
+    Searcher(max_tweets=10).tweet_lookup(['1125295472908886016'], 'test.csv')
 
 
 def conversation_search():

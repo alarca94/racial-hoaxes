@@ -24,7 +24,7 @@ def run_automatic_downloader():
     the manually annotated racial target and both, previous and posterior tweets within the conversation (neignbors)
     '''
 
-    download_from_sources = []  # Possible values: ['bufale', 'butac', 'newtral', 'migracion.maldita']
+    download_from_sources = ['bufale', 'butac', 'newtral', 'migracion.maldita']  # Possible values: ['bufale', 'butac', 'newtral', 'migracion.maldita']
     racial_hoaxes = pd.read_csv('./query_files/full_version.csv')
     visited_urls = []
     for ix, row in racial_hoaxes.iterrows():
@@ -50,12 +50,12 @@ def run_automatic_downloader():
                     print('Searching by quoted text...')
                     run_url_quotes_strategy(fact_check_url, int(fact_check_date[-4:]), fact_checker, rh_id)
 
-    noisy_sources = []  # Possible values: ['migracion.maldita']
+    noisy_sources = ['migracion.maldita']  # Possible values: ['migracion.maldita']
     for fact_checker in noisy_sources:
         print(f'De-noising {fact_checker} data...')
         force_target_in_text(racial_hoaxes, fact_checker)
 
-    expand_from_sources = []  # Possible values: ['bufale', 'butac', 'newtral', 'migracion.maldita']
+    expand_from_sources = ['bufale', 'butac', 'newtral', 'migracion.maldita']  # Possible values: ['bufale', 'butac', 'newtral', 'migracion.maldita']
     for fact_checker in expand_from_sources:
         expand_conversations(fact_checker)
 
