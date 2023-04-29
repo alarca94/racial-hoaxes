@@ -10,6 +10,10 @@ The GUI part of the project is currently under construction, so no complex funct
 
 If a specific query needs to be run, you can find as useful the methods run_query(), tweets_search() or conversation_search().
 
+## Important note:
+
+To access Twitter API 2.0, a developer account must be created with its associated bearer_token. The code is prepared to read it from a ```keys.json``` file (with contents: ```{"bearer_token": "XXXXXXXXXX}"```).
+
 ## Requirements:
 
 ```PyQt5==5.15.4
