@@ -18,4 +18,5 @@ numpy==1.19.3
 beautifulsoup4==4.8.2
 newspaper3k==0.2.8
 nltk==3.4.5
+unidecode
 ```
