@@ -100,6 +100,8 @@ def run_url_tweets_strategy(url, fact_checker, rh_id):
         Searcher(max_tweets=MAX_TWEETS).tweet_lookup(embed_tweet_ids, filename=filename, rh_id=rh_id)
     else:
         print('\t+++ No embedded tweets were found...')
+
+    return False
     # multiple_search(embed_tweets, query_params, rh_id, filename)
 
 

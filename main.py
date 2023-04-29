@@ -1,14 +1,3 @@
-import run_gui
-import json
-import re
-import pandas as pd
-import dateutil.parser
-
-from utils.constants import *
-from utils.inout import read_tweets
-from utils.preprocess import *
-from utils.search import Searcher
-from utils.strategies import *
 from utils.aux_funcs import *
 
 
@@ -28,7 +17,7 @@ def run_automatic_downloader():
     racial_hoaxes = pd.read_csv('./query_files/full_version.csv')
     visited_urls = []
     for ix, row in racial_hoaxes.iterrows():
-        fact_check_url = row.Source
+        fact_check_url = row.Source.replace(' ', '')
         if fact_check_url not in visited_urls:
             visited_urls.append(fact_check_url)
 
@@ -38,13 +27,17 @@ def run_automatic_downloader():
             rh_id = row['RH ID']
 
             if fact_checker in download_from_sources:
-                print(f'\033[94m {row["RH ID"]} \u27f6 {fact_checker} \u27f6 {fact_title}\033[0m')
+                print(f'\033[94m {rh_id} \u27f6 {fact_checker} \u27f6 {fact_title}\033[0m')
 
                 if fact_checker == 'bufale':
                     run_title_strategy(fact_title, int(fact_check_date), fact_checker, rh_id)
                 elif fact_checker == 'butac':
                     run_title_strategy(fact_title, int(fact_check_date), fact_checker, rh_id, keep_stopwords=False)
                 elif fact_checker in ['newtral', 'migracion.maldita']:  # Possible values: ['newtral', 'migracion.maldita']
+                    html = requests.get(fact_check_url)
+                    if not html.ok:
+                        print(f'\033[91m URL {fact_check_url} Request failed with status code {html.status_code}\033[0m')
+                        continue
                     print('Searching by embedded tweets...')
                     run_url_tweets_strategy(fact_check_url, fact_checker, rh_id)
                     print('Searching by quoted text...')
@@ -66,15 +59,5 @@ def run_automatic_downloader():
 
 if __name__ == '__main__':
     run_automatic_downloader()
-    # run_gui.run()
-    # run_query()
-    # visualize_data()
-    # clean_data()
-    # normalize_ids()
-    # tweets_search()
-    # conversation_search()
-    # first_tweets_retrieval('newtral_tweets.csv')
-    # get_subset()
-    # test()
 
     print('Finished...')
